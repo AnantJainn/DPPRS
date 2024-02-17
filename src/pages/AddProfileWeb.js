@@ -95,13 +95,13 @@ const AddProfileWeb = () => {
         src="../icons8dashboardlayout48-1@2x.png"
       />
       <div className={styles.groupDiv}>
-        <img className={styles.polygonIcon} alt="" src="../polygon-1.svg" />
-        <img className={styles.polygonIcon} alt="" src="../polygon-1.svg" />
+        <img className={styles.polygonIcon} alt="" src="../Pol-removebg-preview.png"/>
+        {/* <img className={styles.polygonIcon} alt="" src="../polygon-1.svg" />
         <img className={styles.polygonIcon2} alt="" src="../polygon-3.svg" />
         <img className={styles.polygonIcon3} alt="" src="../polygon-4.svg" />
-        <div className={styles.aANKHDiv}>AANKH</div>
+        <div className={styles.aANKHDiv}>AANddKH</div>
         <img className={styles.ellipseIcon} alt="" src="../ellipse-6.svg" />
-        <img className={styles.ellipseIcon1} alt="" src="../ellipse-5.svg" />
+        <img className={styles.ellipseIcon1} alt="" src="../ellipse-5.svg" /> */}
       </div>
       <img className={styles.ellipseIcon2} alt="" src="../ellipse-7.svg" />
       <img
@@ -157,7 +157,7 @@ const AddProfileWeb = () => {
         alt=""
         src="../icons8profile32-1@2x.png"
       />
-      <img className={styles.groupIcon1} alt="" src="../group.svg" />
+      <img className={styles.groupIcon1} alt="" src="../Delhi_Police_Logo.png" />
       <div className={styles.groupDiv1}>
         <div className={styles.groupDiv2}>
           <img

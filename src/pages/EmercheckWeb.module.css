@@ -58,10 +58,10 @@
 .polygonIcon,
 .polygonIcon2 {
   position: absolute;
-  top: 14.89px;
-  left: 14.87px;
-  width: 57.44px;
-  height: 57.21px;
+  top: 3.89px;
+  left: 3.87px;
+  width: 87.44px;
+  height: 87.21px;
 }
 .polygonIcon2 {
   top: 13.41px;
@@ -187,12 +187,12 @@
 }
 .groupIcon1 {
   position: absolute;
-  height: 9.16%;
+  height: 13.16%;
   width: 6.61%;
   top: 52.55%;
   right: 87.63%;
   bottom: 38.29%;
-  left: 5.75%;
+  left: 2.75%;
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;

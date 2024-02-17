@@ -1,5 +1,5 @@
-import { useCallback ,useState} from "react";
-import { Button} from "@mui/material";
+import { useCallback, useState } from "react";
+import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "./OfficerAnalysisWeb.module.css";
 
@@ -31,38 +31,39 @@ const OfficerAnalysisWeb = () => {
   }, [navigate]);
   const [name, setFname] = useState("");
   const [id, setID] = useState("");
-  
- const handleSubmit =(e) => {
-      e.preventDefault();
-      console.log(name, id);
-      fetch("http://172.16.200.150:3000/patrolingofficers/:idnumber/profile", {
-        method: "GET",
-        crossDomain: true,
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify({
-         name, id}),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data, "userRegister");
-          if (data.status == "ok") {
-            alert("Successful");
-          } else {
-            alert("User Found");
-          }
-        });
-      };
-      function SubmitButton(){
-        if (name && id){
-          return <button type="button">Get Analysis</button>
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name, id);
+    fetch("http://172.16.200.150:3000/patrolingofficers/:idnumber/profile", {
+      method: "GET",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        name, id
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "userRegister");
+        if (data.status == "ok") {
+          alert("Successful");
         } else {
-          return <button type="button" disabled>Get Analysis</button>
-        };
-      };
+          alert("User Found");
+        }
+      });
+  };
+  function SubmitButton() {
+    if (name && id) {
+      return <button type="button">Get Analysis</button>
+    } else {
+      return <button type="button" disabled>Get Analysis</button>
+    };
+  };
   return (
     <div className={styles.officerAnalysisWebDiv}>
       <div className={styles.rectangleDiv} />
@@ -90,13 +91,13 @@ const OfficerAnalysisWeb = () => {
         src="../icons8dashboardlayout48-1@2x.png"
       />
       <div className={styles.groupDiv}>
-        <img className={styles.polygonIcon} alt="" src="../polygon-1.svg" />
-        <img className={styles.polygonIcon} alt="" src="../polygon-1.svg" />
+        <img className={styles.polygonIcon} alt="" src="../Pol-removebg-preview.png" />
+        {/* <img className={styles.polygonIcon} alt="" src="../polygon-1.svg" />
         <img className={styles.polygonIcon2} alt="" src="../polygon-3.svg" />
         <img className={styles.polygonIcon3} alt="" src="../polygon-4.svg" />
         <div className={styles.aANKHDiv}>AANKH</div>
         <img className={styles.ellipseIcon} alt="" src="../ellipse-6.svg" />
-        <img className={styles.ellipseIcon1} alt="" src="../ellipse-5.svg" />
+        <img className={styles.ellipseIcon1} alt="" src="../ellipse-5.svg" /> */}
       </div>
       <img className={styles.ellipseIcon2} alt="" src="../ellipse-7.svg" />
       <img
@@ -152,7 +153,7 @@ const OfficerAnalysisWeb = () => {
         alt=""
         src="../icons8profile32-1@2x.png"
       />
-      <img className={styles.groupIcon1} alt="" src="../group.svg" />
+      <img className={styles.groupIcon1} alt="" src="../Delhi_Police_Logo.png" />
       <div className={styles.groupDiv1}>
         <img
           className={styles.rectangleIcon}
@@ -172,35 +173,35 @@ const OfficerAnalysisWeb = () => {
       <form action="" onSubmit={handleSubmit} className={styles.grp2}>
         <div >
           <label htmlFor="name">Full Name</label>
-          <input  type="text" className={styles.ip1}
-          onChange={(e) => setFname(e.target.value)}
-          name="name" id="name"/>
+          <input type="text" className={styles.ip1}
+            onChange={(e) => setFname(e.target.value)}
+            name="name" id="name" />
         </div>
         <div >
           <label htmlFor="id">ID Number</label>
           <input type="text" className={styles.ip1}
-          onChange={(e) => setID(e.target.value)}
-           name="id" id="id"/>
+            onChange={(e) => setID(e.target.value)}
+            name="id" id="id" />
         </div>
-         if (name && id){
-        <Button
-        className={styles.groupButton}
-        type = "submit"
-        href="/OfficerAnalysisWeb2"
-      >
-        Get Analysis
-      </Button>
-}
-else{
-  <Button
-  className={styles.groupButton}
-  type = "submit"
-  disabled
->
-  Get Analysis
-</Button>
+        if (name && id){
+          <Button
+            className={styles.groupButton}
+            type="submit"
+            href="/OfficerAnalysisWeb2"
+          >
+            Get Analysis
+          </Button>
+        }
+        else{
+          <Button
+            className={styles.groupButton}
+            type="submit"
+            disabled
+          >
+            Get Analysis
+          </Button>
 
-}
+        }
       </form>
       <div className={styles.groupDiv4}>
         <div className={styles.rectangleDiv6} />
