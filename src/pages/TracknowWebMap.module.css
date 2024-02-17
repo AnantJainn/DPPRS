@@ -1,0 +1,541 @@
+.rectangleDiv {
+  position: absolute;
+  top: 0;
+  left: -3px;
+  background-color: var(--color-indigo-100);
+  width: 283px;
+  height: 982px;
+}
+.icons8Analytics301 {
+  position: absolute;
+  top: 269px;
+  left: 54px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.rectangleDiv1,
+.rectangleDiv2,
+.rectangleDiv3 {
+  position: absolute;
+  top: 816px;
+  left: 77.58px;
+  background-color: var(--color-beige-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 36px;
+  height: 207px;
+  transform: rotate(53.59deg);
+  transform-origin: 0 0;
+}
+.rectangleDiv2,
+.rectangleDiv3 {
+  top: 761px;
+  left: 88.17px;
+  background-color: var(--color-gold);
+  transform: rotate(53.4deg);
+}
+.rectangleDiv3 {
+  top: 713.98px;
+  left: 88.27px;
+  background-color: var(--color-yellow);
+  transform: rotate(53.5deg);
+}
+.dashboardButton {
+  position: absolute;
+  top: 139px;
+  left: 65px;
+  color: white;
+  cursor: pointer;
+}
+.icons8DashboardLayout481 {
+  position: absolute;
+  top: 146px;
+  left: 54px;
+  width: 19.06px;
+  height: 18px;
+  object-fit: cover;
+}
+.polygonIcon,
+.polygonIcon2 {
+  position: absolute;
+  top: 14.89px;
+  left: 14.87px;
+  width: 57.44px;
+  height: 57.21px;
+}
+.polygonIcon2 {
+  top: 13.41px;
+  left: 12.03px;
+  width: 63.33px;
+  height: 62.02px;
+}
+.aANKHDiv,
+.polygonIcon3 {
+  position: absolute;
+  top: 6.17px;
+  left: 6.62px;
+  width: 75.48px;
+  height: 74.4px;
+}
+.aANKHDiv {
+  top: 40px;
+  left: 34px;
+  font-weight: 900;
+  display: inline-block;
+  width: 27.7px;
+  height: 10.52px;
+}
+.ellipseIcon {
+  position: absolute;
+  top: 31.39px;
+  left: 47.46px;
+  width: 19.44px;
+  height: 24.23px;
+}
+.ellipseIcon1,
+.groupDiv {
+  position: absolute;
+  top: 32.48px;
+  left: 25.22px;
+  width: 19.52px;
+  height: 24.2px;
+}
+.groupDiv {
+  top: 30px;
+  left: 78px;
+  width: 87px;
+  height: 87px;
+  text-align: left;
+  font-size: var(--font-size-3xs);
+  color: var(--color-white);
+  font-family: var(--font-noto-sans-thai-ui);
+}
+.ellipseIcon2,
+.ellipseIcon3 {
+  position: absolute;
+  top: 87px;
+  left: 253px;
+  width: 53px;
+  height: 54px;
+}
+.ellipseIcon3 {
+  top: 92.04px;
+  left: 258.04px;
+  width: 43.92px;
+  height: 43px;
+  cursor: pointer;
+}
+.groupIcon,
+.trackNowDiv {
+  position: absolute;
+  top: 106px;
+  left: 274.94px;
+  width: 10.19px;
+  height: 16.66px;
+}
+.trackNowDiv {
+  top: 197px;
+  left: 49px;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  display: inline-block;
+  width: 134px;
+  height: 27px;
+}
+.icons8Dashboard481 {
+  position: absolute;
+  top: 203px;
+  left: 54px;
+  width: 18px;
+  height: 16px;
+  object-fit: cover;
+}
+
+.officerAnalysisButton {
+  position: absolute;
+  color: white;
+  top: 261px;
+  left: 65px;
+  cursor: pointer;
+}
+.emerCheckButton {
+  position: absolute;
+  top: 333px;
+  left: 61px;
+  color: white;
+  cursor: pointer;
+}
+.icons8CheckpointGoalFlagFo {
+  position: absolute;
+  top: 342px;
+  left: 54px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.addProfileButton {
+  position: absolute;
+  top: 401px;
+  left: 70px;
+  color: white;
+  cursor: pointer;
+}
+.icons8Profile321 {
+  position: absolute;
+  top: 410px;
+  left: 54px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.groupIcon1 {
+  position: absolute;
+  height: 9.16%;
+  width: 6.61%;
+  top: 52.55%;
+  right: 87.63%;
+  bottom: 38.29%;
+  left: 5.75%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.lineIcon {
+  position: absolute;
+  top: 213.5px;
+  left: 787px;
+  width: 149px;
+  height: 1px;
+}
+.lineIcon1,
+.rectangleIcon {
+  position: absolute;
+  top: 215.41px;
+  left: 280px;
+  width: 1232px;
+  height: 766.59px;
+}
+.lineIcon1 {
+  top: 150.79px;
+  left: 737.59px;
+  width: 202.53px;
+  height: 2.14px;
+}
+.groupDiv1,
+.rectangleDiv4 {
+  position: absolute;
+  width: 402.17px;
+  height: 247.07px;
+}
+.rectangleDiv4 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background: linear-gradient(180deg, #fff, #ededed);
+  backdrop-filter: blur(4px);
+}
+.groupDiv1 {
+  top: 66px;
+  left: 637.04px;
+}
+.groupDiv2,
+.rectangleDiv5,
+.rectangleDiv6 {
+  position: absolute;
+  width: 367.69px;
+  height: 217.33px;
+}
+.rectangleDiv5 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-lg);
+  background-color: var(--color-indigo-100);
+}
+.groupDiv2,
+.rectangleDiv6 {
+  top: 80.87px;
+  left: 654.28px;
+}
+.rectangleDiv6 {
+  top: 227px;
+  left: 1708.92px;
+  background-color: var(--color-indigo-200);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 459px;
+  height: 459px;
+  transform: rotate(45.42deg);
+  transform-origin: 0 0;
+}
+.trackNowDiv1 {
+  position: absolute;
+  top: 168.54px;
+  left: 650px;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-white);
+  display: inline-block;
+  width: 287px;
+  height: 31.25px;
+
+  /* position: absolute;
+  top: 92.77px;
+  left: 430px;
+  font-weight: 600;
+  display: inline-block;
+  width: 287px;
+  height: 31.25px; */
+}
+.rectangleDiv7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-sm);
+  background-color: var(--color-gray-500);
+  width: 449px;
+  height: 493px;
+}
+.mapsicleMapIcon {
+  position: absolute;
+  top: 10.53px;
+  left: 10.46px;
+  width: 427.2px;
+  height: 469.07px;
+  object-fit: cover;
+}
+.rectangleDiv8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xs);
+  background-color: var(--color-gray-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 24px;
+  height: 51px;
+}
+.icons8Minus241,
+.icons8PlusMath241 {
+  position: absolute;
+  top: 7.68px;
+  left: 5.09px;
+  width: 12.49px;
+  height: 12px;
+  object-fit: cover;
+}
+.icons8Minus241 {
+  top: 30.74px;
+}
+.groupDiv4 {
+  position: absolute;
+  top: 410px;
+  left: 388px;
+  width: 24px;
+  height: 51px;
+}
+.groupDiv3,
+.policeCar1Icon {
+  position: absolute;
+  top: 371px;
+  left: 925px;
+  width: 449px;
+  height: 493px;
+}
+.policeCar1Icon {
+  top: 57px;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+}
+.lineIcon2,
+.lineIcon3 {
+  position: absolute;
+  top: 3.49px;
+  left: 45px;
+  width: 27.86px;
+  height: 46.51px;
+}
+.lineIcon3 {
+  top: 48px;
+  left: 58px;
+  width: 14.9px;
+  height: 29.43px;
+}
+.ellipseIcon4,
+.lineIcon4 {
+  position: absolute;
+  top: 71px;
+  left: 21.87px;
+  width: 37.13px;
+  height: 5.99px;
+}
+.ellipseIcon4 {
+  top: 0;
+  left: 39px;
+  width: 12px;
+  height: 12px;
+}
+.sTextField {
+  position: absolute;
+  top: 0;
+  left: 43px;
+}
+.groupDiv5,
+.rectangleDiv9 {
+  position: absolute;
+  top: 573px;
+  left: 1201px;
+  width: 72px;
+  height: 85px;
+}
+.rectangleDiv9 {
+  top: 369px;
+  left: 356px;
+  border-radius: var(--br-md);
+  background-color: var(--color-gray-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 449px;
+  height: 493px;
+}
+.placeholder1Icon {
+  position: absolute;
+  top: 386px;
+  left: 377px;
+  width: 11px;
+  height: 14px;
+  object-fit: cover;
+}
+.bhaijipuraPDPURoad {
+  position: absolute;
+  top: 383px;
+  left: 400px;
+  display: inline-block;
+}
+.distanceCovernedTillNow,
+.numberOfStopage,
+.pratikMallSargasanSquare {
+  position: absolute;
+  top: 423px;
+  left: 400px;
+  display: inline-block;
+}
+.distanceCovernedTillNow,
+.numberOfStopage {
+  top: 459px;
+}
+.numberOfStopage {
+  top: 502px;
+}
+.missedVerificationDiv,
+.totalDurationDiv {
+  position: absolute;
+  top: 588px;
+  left: 399px;
+  display: inline-block;
+}
+.missedVerificationDiv {
+  top: 545px;
+  left: 400px;
+}
+.ellipseIcon5,
+.sDiv {
+  position: absolute;
+  top: 423px;
+  left: 366px;
+  width: 33px;
+  height: 33px;
+}
+.sDiv {
+  left: 384px;
+  font-weight: 600;
+  color: var(--color-white);
+  display: inline-block;
+  width: 3px;
+  height: 7px;
+}
+.rectangleDiv10,
+.rectangleDiv11,
+.rectangleDiv12,
+.rectangleDiv13 {
+  position: absolute;
+  top: 460px;
+  left: 631px;
+  border-radius: var(--br-lg);
+  background-color: var(--color-gray-400);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 75px;
+  height: 27px;
+}
+.rectangleDiv11,
+.rectangleDiv12,
+.rectangleDiv13 {
+  top: 545px;
+  height: 28px;
+}
+.rectangleDiv12,
+.rectangleDiv13 {
+  top: 588px;
+}
+.rectangleDiv13 {
+  top: 500px;
+}
+.div,
+.kmDiv,
+.minsDiv,
+.noDiv {
+  position: absolute;
+  top: 465px;
+  left: 652px;
+  font-size: var(--font-size-xs);
+  display: inline-block;
+}
+.div,
+.minsDiv,
+.noDiv {
+  top: 506px;
+  left: 662px;
+}
+.minsDiv,
+.noDiv {
+  top: 553px;
+}
+.minsDiv {
+  top: 597px;
+  left: 650px;
+}
+.rectangleDiv14 {
+  position: absolute;
+  top: 411px;
+  left: 1001px;
+  border-radius: var(--br-md);
+  background-color: var(--color-gray-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 297px;
+  height: 35px;
+}
+.placeholder1Icon1 {
+  position: absolute;
+  top: 420px;
+  left: 1013px;
+  width: 15px;
+  height: 18px;
+  object-fit: cover;
+}
+.bhaijipuraPDPURoad1 {
+  position: absolute;
+  top: 418px;
+  left: 1039px;
+  font-size: var(--font-size-sm);
+  color: #979797;
+  display: inline-block;
+}
+.tracknowWebDiv {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 982px;
+  overflow: hidden;
+  text-align: right;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}

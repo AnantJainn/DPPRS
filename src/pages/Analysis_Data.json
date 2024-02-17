@@ -1,0 +1,11 @@
+[{"date":"10/2/2023","start_time":"9:30 AM","end_time":"10:40 AM","duration":"1 hours 10 min","fir":2,"start_check":"23.249,72.639","end_check":"23.246,72.661"},
+{"date":"10/2/2023","start_time":"11:00 AM","end_time":"1:10 PM","duration":"2 hours 10 min","fir":0,"start_check":"23.239,72.668","end_check":"23.213,72.643"},
+{"date":"10/2/2023","start_time":"3:00 PM","end_time":"3 :45 PM","duration":"45 minutes","fir":1,"start_check":"23.197,72.632","end_check":"23.201,72.618"},
+{"date":"10/2/2023","start_time":"3:53 PM","end_time":"5:00 PM","duration":"1 hours 7 min","fir":1,"start_check":"23.166,72.57","end_check":"23.211,72.633"},
+{"date":"11/2/2023","start_time":"8:00 PM","end_time":"9:20 PM","duration":"1 hours 20 min","fir":0,"start_check":"23.071,72.649","end_check":"23.072,72.539"},
+{"date":"11/2/2023","start_time":"9:30 PM","end_time":"10:23 PM","duration":"57 Minutes","fir":0,"start_check":"23.195,72.690","end_check":"23.072,72.649"},
+{"date":"11/2/2023","start_time":"11:10 PM","end_time":"1: 15 AM","duration":"2 hours 5 min","fir":3,"start_check":"23.210,72.624","end_check":"23.216,72.657"},
+{"date":"11/2/2023","start_time":"11:23 AM","end_time":"1: 09 AM","duration":"46 minutes","fir":4,"start_check":"23.218,72.665","end_check":"23.209,72.617"},
+{"date":"11/2/2023","start_time":"2: 20 AM","end_time":"3: 03 AM","duration":"43 minutes","fir":2,"start_check":"23.202,72.648","end_check":"23.073,72.624"},
+{"date":"11/2/2023","start_time":"3: 20 AM","end_time":"3: 44 AM","duration":"24 minutes","fir":0,"start_check":"23.202,72.648","end_check":"23.059,72.658"},
+{"date":"11/2/2023","start_time":"4: 02 AM","end_time":"4 : 55 AM","duration":"53 minutes","fir":0,"start_check":"23.059,72.658","end_check":"28.659,77.267"}]

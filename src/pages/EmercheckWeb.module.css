@@ -1,0 +1,602 @@
+.rectangleDiv {
+  position: absolute;
+  top: 0;
+  left: -3px;
+  background-color: var(--color-indigo-100);
+  width: 283px;
+  height: 982px;
+}
+.icons8Analytics301 {
+  position: absolute;
+  top: 269px;
+  left: 54px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.rectangleDiv1,
+.rectangleDiv2,
+.rectangleDiv3 {
+  position: absolute;
+  top: 816px;
+  left: 77.58px;
+  background-color: var(--color-beige-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 36px;
+  height: 207px;
+  transform: rotate(53.59deg);
+  transform-origin: 0 0;
+}
+.rectangleDiv2,
+.rectangleDiv3 {
+  top: 761px;
+  left: 88.17px;
+  background-color: var(--color-gold);
+  transform: rotate(53.4deg);
+}
+.rectangleDiv3 {
+  top: 713.98px;
+  left: 88.27px;
+  background-color: var(--color-yellow);
+  transform: rotate(53.5deg);
+}
+.dashboardButton {
+  position: absolute;
+  top: 139px;
+  left: 65px;
+  color: white;
+  cursor: pointer;
+}
+.icons8DashboardLayout481 {
+  position: absolute;
+  top: 146px;
+  left: 54px;
+  width: 19.06px;
+  height: 18px;
+  object-fit: cover;
+}
+.polygonIcon,
+.polygonIcon2 {
+  position: absolute;
+  top: 14.89px;
+  left: 14.87px;
+  width: 57.44px;
+  height: 57.21px;
+}
+.polygonIcon2 {
+  top: 13.41px;
+  left: 12.03px;
+  width: 63.33px;
+  height: 62.02px;
+}
+.aANKHDiv,
+.polygonIcon3 {
+  position: absolute;
+  top: 6.17px;
+  left: 6.62px;
+  width: 75.48px;
+  height: 74.4px;
+}
+.aANKHDiv {
+  top: 40px;
+  left: 34px;
+  font-weight: 900;
+  font-size: 7px;
+  display: inline-block;
+  width: 27.7px;
+  height: 10.52px;
+}
+.ellipseIcon {
+  position: absolute;
+  top: 31.39px;
+  left: 47.46px;
+  width: 19.44px;
+  height: 24.23px;
+}
+.ellipseIcon1,
+.groupDiv {
+  position: absolute;
+  top: 32.48px;
+  left: 25.22px;
+  width: 19.52px;
+  height: 24.2px;
+}
+.groupDiv {
+  top: 30px;
+  left: 78px;
+  width: 87px;
+  height: 87px;
+  text-align: left;
+  font-family: var(--font-noto-sans-thai-ui);
+}
+.ellipseIcon2,
+.ellipseIcon3 {
+  position: absolute;
+  top: 87px;
+  left: 253px;
+  width: 53px;
+  height: 54px;
+}
+.ellipseIcon3 {
+  top: 92.04px;
+  left: 258.04px;
+  width: 43.92px;
+  height: 43px;
+  cursor: pointer;
+}
+.groupIcon {
+  position: absolute;
+  top: 106px;
+  left: 274.94px;
+  width: 10.19px;
+  height: 16.66px;
+}
+.trackNowButton {
+  position: absolute;
+  top: 194px;
+  left: 55px;
+  color: white;
+  cursor: pointer;
+}
+.icons8Dashboard481 {
+  position: absolute;
+  top: 203px;
+  left: 54px;
+  width: 18px;
+  height: 16px;
+  object-fit: cover;
+}
+.officerAnalysisButton {
+  position: absolute;
+  color: white;
+  top: 261px;
+  left: 65px;
+  cursor: pointer;
+}
+.emerCheckDiv {
+  position: absolute;
+  top: 333px;
+  left: 82px;
+  font-size: var(--font-size-base);
+  display: inline-block;
+  width: 129px;
+  height: 27px;
+}
+.icons8CheckpointGoalFlagFo {
+  position: absolute;
+  top: 342px;
+  left: 54px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.addProfileButton {
+  position: absolute;
+  top: 401px;
+  left: 70px;
+  color: white;
+  cursor: pointer;
+}
+.icons8Profile321 {
+  position: absolute;
+  top: 410px;
+  left: 54px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.groupIcon1 {
+  position: absolute;
+  height: 9.16%;
+  width: 6.61%;
+  top: 52.55%;
+  right: 87.63%;
+  bottom: 38.29%;
+  left: 5.75%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.lineIcon,
+.rectangleIcon {
+  position: absolute;
+  top: 153px;
+  left: 0;
+  width: 1256px;
+  height: 785px;
+}
+.lineIcon {
+  top: 86.85px;
+  left: 466.5px;
+  width: 206.47px;
+  height: 2.17px;
+}
+.groupDiv3,
+.rectangleDiv4 {
+  position: absolute;
+  top: 0;
+  width: 410px;
+  height: 253px;
+}
+.rectangleDiv4 {
+  left: 0;
+  border-radius: var(--br-xl);
+  background: linear-gradient(180deg, #fff, #ededed);
+  backdrop-filter: blur(4px);
+}
+.groupDiv3 {
+  left: 364px;
+}
+.groupDiv4,
+.rectangleDiv5 {
+  position: absolute;
+  width: 374.86px;
+  height: 222.55px;
+}
+.rectangleDiv5 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-lg);
+  background-color: var(--color-indigo-100);
+}
+.groupDiv4 {
+  top: 15.23px;
+  left: 381.57px;
+}
+.emergencyCheckpointsDiv {
+  position: absolute;
+  top: 89px;
+  left: 335px;
+  font-weight: 600;
+  font-size: 35px;
+  display: inline-block;
+  width: 353px;
+  height: 32px;
+}
+.groupDiv2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1256px;
+  height: 938px;
+}
+.groupDiv1,
+.lineIcon1 {
+  position: absolute;
+  top: 147.54px;
+  left: 400px;
+  width: 342.01px;
+  height: 1px;
+}
+.groupDiv1 {
+  top: 44px;
+  left: 280px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 1256px;
+  height: 938px;
+  font-size: var(--font-size-2xl);
+}
+.addEmergencyCheckpoints,
+.fullNameDiv {
+  position: absolute;
+  top: 43px;
+  left: 0;
+  display: inline-block;
+}
+.addEmergencyCheckpoints {
+  top: 0;
+  left: 623px;
+  text-align: left;
+}
+.emergencyCheckpointDiv,
+.iDNumberDiv,
+.noteDiv {
+  position: absolute;
+  top: 215px;
+  left: 0;
+  display: inline-block;
+}
+.emergencyCheckpointDiv,
+.noteDiv {
+  top: 329px;
+  left: 623px;
+}
+.noteDiv {
+  top: 436px;
+}
+.rectangleTextField {
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 87px;
+  left: 0;
+}
+.rectangleDiv6 {
+  position: absolute;
+  top: 33px;
+  left: 624px;
+  border-radius: var(--br-md);
+  background-color: var(--color-gray-500);
+  width: 291px;
+  height: 287px;
+}
+.rectangleTextField1,
+.rectangleTextField2,
+.rectangleTextField3 {
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 362px;
+  left: 623px;
+}
+.rectangleTextField2,
+.rectangleTextField3 {
+  top: 469px;
+}
+.rectangleTextField3 {
+  top: 256px;
+  left: 0;
+}
+.groupDiv5 {
+  position: absolute;
+  top: 366px;
+  left: 357px;
+  width: 948px;
+  height: 520px;
+  font-size: var(--font-size-lg);
+  color: var(--color-black);
+}
+.mapsicleMapIcon {
+  position: absolute;
+  top: 408px;
+  left: 990px;
+  width: 273px;
+  height: 270px;
+  object-fit: cover;
+}
+.rectangleChakraIconButton {
+  position: absolute;
+  top: 833px;
+  left: 388px;
+}
+.emergencyAlertDiv {
+  position: absolute;
+  top: 780px;
+  left: 400px;
+  width: 250px;
+  height: 60px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #C63A3A;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  
+  /* background-color: red;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  border-radius: 7px;
+  top: 830px;
+  left: 400px;
+  display: inline-block;
+  width: 214px;
+  height: 35px; */
+}
+
+
+.rectangleDiv7 {
+  position: absolute;
+  top: 418px;
+  left: 1005px;
+  border-radius: var(--br-lg);
+  background-color: var(--color-gray-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 245px;
+  height: 24px;
+}
+.placeholder1Icon {
+  position: absolute;
+  top: 423px;
+  left: 1014px;
+  width: 11px;
+  height: 14px;
+  object-fit: cover;
+}
+
+.addEmergencyCheckpoint {
+  top: 424px;
+  left: 1029px;
+  font-size: var(--font-size-3xs);
+}
+.egOffYourSciren {
+  top: 841px;
+  left: 989px;
+  font-size: 10px;
+}
+.icons8Emergency641 {
+  position: absolute;
+  top: 696px;
+  left: 1245px;
+  width: 28.75px;
+  height: 25px;
+  object-fit: cover;
+}
+.rectangleDiv8,
+.rectangleDiv9 {
+  position: absolute;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.rectangleDiv8 {
+  top: 227px;
+  left: 1708.92px;
+  background-color: var(--color-indigo-200);
+  width: 459px;
+  height: 459px;
+  transform: rotate(45.42deg);
+  transform-origin: 0 0;
+}
+.rectangleDiv9 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-sm);
+  background-color: var(--color-gray-100);
+  width: 24px;
+  height: 51px;
+}
+.icons8Minus241,
+.icons8PlusMath241 {
+  position: absolute;
+  top: 7.68px;
+  left: 5.09px;
+  width: 12.49px;
+  height: 12px;
+  object-fit: cover;
+}
+.icons8Minus241 {
+  top: 30.74px;
+}
+.groupDiv6 {
+  position: absolute;
+  top: 598px;
+  left: 1216px;
+  width: 24px;
+  height: 51px;
+}
+.emercheckWebDiv {
+  position: relative;
+  background-color: var(--color-white);
+  width: 150%;
+  height: 982px;
+  overflow: hidden;
+  text-align: right;
+  font-size: var(--font-size-4xs);
+  color: white;
+  font-family: var(--font-poppins);
+}
+.contaimer{
+  display: flex;
+  /* flex-direction: column; */
+  width:100vw;
+  height:100vh;
+}
+.locationbox {
+  background: #F6F6F6;
+  position: absolute;
+  left: 1100px;
+  width: 525px;
+  height: 700px;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10%;
+  color:#190fda;
+  box-shadow: 4px 2px 2px 2px rgb(151, 149, 149);
+}
+
+
+.cell{
+  color: rgb(44, 42, 49);
+  width:400px;
+  height:30px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  
+}
+
+
+
+.checkpoint{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin:10px;
+}
+
+.checkpoint button{
+  border: none;
+  border-radius: 10px;
+  width:120px;
+  height: 30px;
+  background-color: #301565;
+  color:#ededed;
+  margin:3px;
+  border: 1px solid #e3aee7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            right:250px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.coordinates{
+  display: flex;
+  flex-direction: column;
+}
+
+.coord{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:500px;
+  height:30px;
+  margin: 3px;
+  color: black;
+  font-size: 25px;
+  /* background-color: red; */
+}
+
+.descbutton{
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  right:250px;
+
+}
+
+.createCheckPoint {
+  height:50px;
+  width:250px;
+  font-size: 16px;
+  border: none;
+  border-radius: 16px;
+  background-color: #190fda;
+  color: whitesmoke;
+  font-size: 20px;
+}
+
+.heading {
+  color: #5B5B5B;
+  font-size: 25px;
+
+}
+.desciption{
+  position :relative;
+  background: #E9E9E9;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 7px;
+min-width: 900px;
+height: 194px;
+font-size: 20px;
+/* 301565 */
+}
+.createCheckPoint{
+  background: #301565;
+
+
+}
+.checkpoint{
+  color: #5B5B5B;
+  font-size: 25px;
+}
