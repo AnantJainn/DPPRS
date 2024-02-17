@@ -15,6 +15,7 @@ import SubmittedWeb from "./pages/SubmittedWeb";
 import Login from "./pages/Login";
 import MapBox from "./pages/MapBox";
 import { useEffect } from "react";
+import GrievanceForm from "./pages/Report";
 
 function App() {
   const action = useNavigationType();
@@ -55,7 +56,7 @@ function App() {
 
   return (
     <Routes>
-       <Route path="/" element ={<HomedashboardWeb />}/> 
+      <Route path="/" element={<HomedashboardWeb />} />
       <Route path="/HomedashboardWeb" element={<HomedashboardWeb />} />
       <Route path="/OfficerAnalysisWeb" element={<OfficerAnalysisWeb />} />
       <Route path="/OfficerAnalysisWeb2" element={<OfficerAnalysisWeb2 />} />
@@ -65,6 +66,7 @@ function App() {
       <Route path="/TracknowWebMap" element={<TracknowWebMap />} />
       <Route path="/SubmittedWeb" element={<SubmittedWeb />} />
       <Route path="/MapBox" element={<MapBox />} />
+      <Route path="/Report" element={<GrievanceForm />} />
       {/* <Route path="/" element ={<Login />}/> */}
     </Routes>
   );

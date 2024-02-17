@@ -1,9 +1,47 @@
-import { useCallback,useState } from "react";
+import { useCallback, useState } from "react";
 import { Button, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "./AddProfileWeb.module.css";
 
+import { db } from "../firebase";
+import { collection, getDocs, addDoc } from "firebase/firestore";
 const AddProfileWeb = () => {
+  const [name, setName] = useState("");
+  const [id, setID] = useState("");
+  const [designation, setDesignation] = useState("");
+  // const [dateOfBirth, setDateOfBirth] = useState("");
+  const [bloodGroup, setBloodGroup] = useState("");
+  const [area, setArea] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Add a new document with a generated ID to the "Profiles" collection using addDoc
+      await addDoc(collection(db, "Profiles"), {
+        name: name,
+        id: id,
+        designation: designation,
+        // dateOfBirth: dateOfBirth,
+        bloodGroup: bloodGroup,
+        area: area,
+      });
+
+      console.log("Profile added successfully");
+      alert("Profile added successfully");
+
+      // Clear input fields after successful submission
+      setName("");
+      setID("");
+      setDesignation("");
+      // setDateOfBirth("");
+      setBloodGroup("");
+      setArea("");
+    } catch (error) {
+      console.error("Error adding profile: ", error);
+      alert("Error adding profile. Please try again.");
+    }
+  };
   const navigate = useNavigate();
 
   const onDashboardButtonClick = useCallback(() => {
@@ -30,74 +68,6 @@ const AddProfileWeb = () => {
     navigate("/SubmittedWeb");
   }, [navigate]);
 
-  const onADDTextClick = useCallback(() => {
-    navigate("/SubmittedWeb");
-  }, [navigate]);
-//   const [userRegistration,setUserRegistration]= useState({
-//     name:"",
-//     idnumber:"",
-//     designation:"",
-//     dateofbirth:"",
-//     bloodgroup:"",
-//     area:""
-
-
-//   });
-//   const [records,setRecords]=useState([]);
-//   const handleInput = (e) => {
-//     const name=e.target.name;
-//     const value=e.target.value;
-//     console.log(name,value);
-//     setUserRegistration({...userRegistration,[name]:value});
-//   }
-//  const handleSubmit =(e) => {
-//       e.preventDefault();
-//       const newRecord = {...userRegistration, id: new Date().getTime().toString() }
-//       console.log(records);
-//       setRecords([...records,newRecord]);
-
-//       setUserRegistration({name: "", designation:"",
-//     idnumber:"",
-//     dateofbirth:"",
-//     bloodgroup:"",
-//     area:""});
-//  }
- const [name, setFname] = useState("");
-  const [id, setID] = useState("");
-  const [designation, setDegisnation] = useState("");
-  const [dateofbirth, setdateofbirth] = useState("");
-  const [bloodgroup, setbloodgroup] = useState("");
-  const [area, setArea] = useState("");
-  
-
-  const handleSubmit = (e) => {
-
-      e.preventDefault();
-
-      console.log(name, id, designation, dateofbirth,bloodgroup,area);
-      fetch("http://localhost:3000/user/addprofile", {
-        method: "POST",
-        crossDomain: true,
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify({
-         name, id, designation, dateofbirth,bloodgroup,area
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data, "userRegister");
-          if (data.status == "ok") {
-            alert("Registration Successful");
-          } else {
-            alert("Profile Added");
-          }
-        });
-    
-  };
   return (
     <div className={styles.addProfileWebDiv}>
       <div className={styles.rectangleDiv} />
@@ -208,58 +178,79 @@ const AddProfileWeb = () => {
       </div>
       <form action="" onSubmit={handleSubmit} className={styles.grp3}>
         <div input>
-        <div >
-          <label htmlFor="name">Full Name</label>
-          <input className={styles.ap} type="text" placeholder=" Enter Full name"
-              onChange={(e) => setFname(e.target.value)}
-                />
-        </div>
-        
-        <div >
-          <label htmlFor="idnumber">ID Number</label>
-          <input className={styles.ap} type="text"placeholder="Enter ID Number"
+          <div>
+            <label htmlFor="name">Full Name</label>
+            <input
+              className={styles.ap}
+              type="text"
+              placeholder="Enter Full name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="idnumber">ID Number</label>
+            <input
+              className={styles.ap}
+              type="text"
+              placeholder="Enter ID Number"
+              value={id}
               onChange={(e) => setID(e.target.value)}
-                />
-        </div>
-        <div >
-          <label htmlFor="designation">Designation</label>
-          <input className={styles.ap} type="text" placeholder="Enter Designation"
-              onChange={(e) => setDegisnation(e.target.value)}
-                />
-        </div>
-        <div >
+            />
+          </div>
+          <div>
+            <label htmlFor="designation">Designation</label>
+            <input
+              className={styles.ap}
+              type="text"
+              placeholder="Enter Designation"
+              value={designation}
+              onChange={(e) => setDesignation(e.target.value)}
+            />
+          </div>
+          {/* <div>
+            <label htmlFor="dateOfBirth">Date Of Birth</label>
+            <input
+              className={styles.ap}
+              type="date"
+              id="dateOfBirth"
+              name="dateOfBirth"
+              value={dateOfBirth}
+              onChange={(e) => setDateOfBirth(e.target.value)}
+              required
+            />
+          </div> */}
 
-          <label  htmlFor="dateofbirth">Date Of Birth</label>
-          <input className={styles.ap} type="date" placeholder="Enter Date Of Birth"
-              onChange={(e) => setdateofbirth(e.target.value)}
-                />
-        </div>
-        <div >
-          <label htmlFor="bloodgroup">Blood Group</label>
-          <input className={styles.ap} type="text" placeholder="Enter Blood Group"
-              onChange={(e) => setbloodgroup(e.target.value)}
-                />
-        </div>
-        <div >
-          <label htmlFor="area">Patrol Area</label>
-          <input className={styles.ap} type="text" placeholder="Enter Area"
+          <div>
+            <label htmlFor="bloodgroup">Blood Group</label>
+            <input
+              className={styles.ap}
+              type="text"
+              placeholder="Enter Blood Group"
+              value={bloodGroup}
+              onChange={(e) => setBloodGroup(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="area">Patrol Area</label>
+            <input
+              className={styles.ap}
+              type="text"
+              placeholder="Enter Area"
+              value={area}
               onChange={(e) => setArea(e.target.value)}
-                />
+            />
+          </div>
+
+          <button type="submit" className={styles.groupButton3}>
+            Add Profile
+          </button>
         </div>
-      
-        
-            <button type="submit" className={styles.groupButton3}>
-             Add Profile
-            </button>
-          
-      </div>
       </form>
-      
+
       <div className={styles.rectangleDiv8} />
-      
-      
+
       <div className={styles.groupDiv7}>
-        
         <div className={styles.rectangleDiv9} />
       </div>
     </div>
