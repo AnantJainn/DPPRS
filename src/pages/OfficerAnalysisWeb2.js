@@ -1,11 +1,11 @@
-import { useCallback,useEffect,useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import analysisData from "./Analysis_Data.json";
-import {useTable} from "react-table";
+import { useTable } from "react-table";
 import * as React from "react";
 import styles from "./OfficerAnalysisWeb2.module.css";
 import "./Table.css";
-import { LineChart, Line} from 'recharts';
+import { LineChart, Line } from 'recharts';
 import {
   PieChart,
   Pie,
@@ -74,48 +74,48 @@ const OfficerAnalysisWeb2 = () => {
       }
     ],
     []
-    
+
   );
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });
-    const piedata = [
-      { name: "Total Time  (in minutes)", police:1040,fill: '#00C49F' },
-      { name: "Patroling Time (in minutes)", police: 740,fill: '#FF8042' },
-      { name: "Stop Time  (in minutes)", police:300,fill: '#FFBB28'  },
-      { name: "FIR Reported", police: 13,fill: '#0088FE' },
-    ];
-    // const graphdata = [
-    //   {
-    //     name: 'Ayushi ',
-    //     total_time: 1040,
-    //     patroling_duration: 740,
-    //     stop_duration: 300,
-    //     report: 13,
-    //   },
-    //   {
-    //     name: 'Ankit',
-    //     total_time: 1540,
-    //     patroling_duration: 1140,
-    //     stop_duration: 400,
-    //     report: 17,
-    //   },
-    //   {
-    //     name: 'Tirth',
-    //     total_time: 940,
-    //     patroling_duration: 640,
-    //     stop_duration: 300,
-    //     report: 9,
-    //   },
-    //   {
-    //     name: 'Jay',
-    //     total_time: 1740,
-    //     patroling_duration: 1590,
-    //     stop_duration: 150,
-    //     report: 22,
-    //   },
-    // ];
+  const piedata = [
+    { name: "Total Time  (in minutes)", police: 1040, fill: '#00C49F' },
+    { name: "Patroling Time (in minutes)", police: 740, fill: '#FF8042' },
+    { name: "Stop Time  (in minutes)", police: 300, fill: '#FFBB28' },
+    { name: "FIR Reported", police: 13, fill: '#0088FE' },
+  ];
+  // const graphdata = [
+  //   {
+  //     name: 'Ayushi ',
+  //     total_time: 1040,
+  //     patroling_duration: 740,
+  //     stop_duration: 300,
+  //     report: 13,
+  //   },
+  //   {
+  //     name: 'Ankit',
+  //     total_time: 1540,
+  //     patroling_duration: 1140,
+  //     stop_duration: 400,
+  //     report: 17,
+  //   },
+  //   {
+  //     name: 'Tirth',
+  //     total_time: 940,
+  //     patroling_duration: 640,
+  //     stop_duration: 300,
+  //     report: 9,
+  //   },
+  //   {
+  //     name: 'Jay',
+  //     total_time: 1740,
+  //     patroling_duration: 1590,
+  //     stop_duration: 150,
+  //     report: 22,
+  //   },
+  // ];
 
-   
+
   return (
     <div className={styles.officerAnalysis2Web}>
       <div className={styles.rectangleDiv} />
@@ -137,13 +137,13 @@ const OfficerAnalysisWeb2 = () => {
         src="../icons8dashboardlayout48-1@2x.png"
       />
       <div className={styles.groupDiv}>
-        <img className={styles.polygonIcon} alt="" src="../polygon-12.svg" />
-        <img className={styles.polygonIcon} alt="" src="../polygon-12.svg" />
+        <img className={styles.polygonIcon} alt="" src="../Pol-removebg-preview.png" />
+        {/* <img className={styles.polygonIcon} alt="" src="../polygon-12.svg" />
         <img className={styles.polygonIcon2} alt="" src="../polygon-32.svg" />
         <img className={styles.polygonIcon3} alt="" src="../polygon-42.svg" />
         <div className={styles.aANKHDiv}>AANKH</div>
         <img className={styles.ellipseIcon} alt="" src="../ellipse-67.svg" />
-        <img className={styles.ellipseIcon1} alt="" src="../ellipse-57.svg" />
+        <img className={styles.ellipseIcon1} alt="" src="../ellipse-57.svg" /> */}
       </div>
       <img className={styles.ellipseIcon2} alt="" src="../ellipse-73.svg" />
       <img
@@ -178,7 +178,7 @@ const OfficerAnalysisWeb2 = () => {
         alt=""
         src="../icons8profile32-1@2x.png"
       />
-      <img className={styles.groupIcon1} alt="" src="../group7.svg" />
+      <img className={styles.groupIcon1} alt="" src="../Delhi_Police_Logo.png" />
       <img className={styles.lineIcon} alt="" src="../line-1110.svg" />
       <div className={styles.groupDiv1}>
         <div className={styles.rectangleDiv4} />
@@ -191,82 +191,82 @@ const OfficerAnalysisWeb2 = () => {
       <div className={styles.groupDiv3}>
         <div className={styles.rectangleDiv6} />
       </div>
-     
+
       <div className={styles.groupDiv4}>
-        
-      <div className="container">
-        <table {...getTableProps()}>
-          <thead>
-            {headerGroups.map((headerGroup) => (
-              <tr {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps()}>
-                    {column.render("Header")}
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody {...getTableBodyProps()}>
-            {rows.map((row) => {
-              prepareRow(row);
-              return (
-                <tr {...row.getRowProps()}>
-                  {row.cells.map((cell) => (
-                    <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
+
+        <div className="container">
+          <table {...getTableProps()}>
+            <thead>
+              {headerGroups.map((headerGroup) => (
+                <tr {...headerGroup.getHeaderGroupProps()}>
+                  {headerGroup.headers.map((column) => (
+                    <th {...column.getHeaderProps()}>
+                      {column.render("Header")}
+                    </th>
                   ))}
                 </tr>
-              );
-            })}
-          </tbody>
-        </table>
-       
-      </div>
-      <div className={styles.hemlo}>
-           
-      <PieChart width={500} height={400}>
-          <Pie
-            dataKey="police"
-            isAnimationActive={false}
+              ))}
+            </thead>
+            <tbody {...getTableBodyProps()}>
+              {rows.map((row) => {
+                prepareRow(row);
+                return (
+                  <tr {...row.getRowProps()}>
+                    {row.cells.map((cell) => (
+                      <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
+                    ))}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+
+        </div>
+        <div className={styles.hemlo}>
+
+          <PieChart width={500} height={400}>
+            <Pie
+              dataKey="police"
+              isAnimationActive={false}
+              data={piedata}
+              cx={200}
+              cy={200}
+              outerRadius={175}
+
+              fill="#fff"
+              label
+            />
+
+            <Tooltip />
+          </PieChart>
+
+          <BarChart
+            width={600}
+            height={400}
             data={piedata}
-            cx={200}
-            cy={200}
-            outerRadius={175}
-  
-            fill="#fff"
-            label
-          />
-          
-          <Tooltip />
-        </PieChart>
-       
-        <BarChart
-          width={600}
-          height={400}
-          data={piedata}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 80,
-            bottom: 5,
-          }}
-          barSize={20}
-        >
-          <XAxis
-            dataKey="name"
-            scale="point"
-            padding={{ left: 10, right: 10 }}
-          />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Bar dataKey="police" fill="#fff" background={{ fill: "#eee" }} />
-        </BarChart>
-      
-           </div>
-            </div>
-            
+            margin={{
+              top: 5,
+              right: 30,
+              left: 80,
+              bottom: 5,
+            }}
+            barSize={20}
+          >
+            <XAxis
+              dataKey="name"
+              scale="point"
+              padding={{ left: 10, right: 10 }}
+            />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <CartesianGrid strokeDasharray="3 3" />
+            <Bar dataKey="police" fill="#fff" background={{ fill: "#eee" }} />
+          </BarChart>
+
+        </div>
+      </div>
+
     </div>
   );
 };

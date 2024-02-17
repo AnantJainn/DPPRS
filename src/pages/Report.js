@@ -102,9 +102,12 @@ function GrievanceForm() {
 
       console.log("Report added successfully");
       alert("Report added successfully");
+      // setFormData(true);
+      setShowPdf(true);
+
 
       // Clear form data after successful submission
-      setFormData(initialFormData);
+      // setFormData(initialFormData);
     } catch (error) {
       console.error("Error adding report: ", error);
       alert("Error adding report. Please try again.");
