@@ -189,6 +189,21 @@ const TracknowWeb = () => {
         Add Profile
       </Button>
       <img
+        className={styles.icons9CheckpointGoalFlagFo}
+        alt=""
+        src="../icons8profile32-1@2x.png"
+      />
+      <Button
+        className={styles.logoutButton}
+        sx={{ width: 157 }}
+        variant="text"
+        color="secondary"
+        href="/report"
+        
+      >
+        Generate Report
+      </Button>
+      <img
         className={styles.icons8Profile321}
         alt=""
         src="../icons8profile32-1@2x.png"

@@ -157,6 +157,21 @@ const AddProfileWeb = () => {
         alt=""
         src="../icons8profile32-1@2x.png"
       />
+      <img
+        className={styles.icons9CheckpointGoalFlagFo}
+        alt=""
+        src="../icons8profile32-1@2x.png"
+      />
+      <Button
+        className={styles.logoutButton}
+        sx={{ width: 157 }}
+        variant="text"
+        color="secondary"
+        href="/report"
+        
+      >
+        Generate Report
+      </Button>
       <img className={styles.groupIcon1} alt="" src="../Delhi_Police_Logo.png" />
       <div className={styles.groupDiv1}>
         <div className={styles.groupDiv2}>
