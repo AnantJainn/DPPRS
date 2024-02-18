@@ -6,6 +6,16 @@
   width: 283px;
   height: 982px;
 }
+
+.table-container {
+  margin-left: 50px;
+  margin-top: 60px; /* Adjusted margin-top */
+  max-width: calc(100% - 100px);
+  max-height: calc(100vh - 500px); /* Adjusted max-height */
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
 .icons8Analytics301 {
   position: absolute;
   top: 269px;
@@ -196,22 +206,6 @@
   overflow: hidden;
   max-height: 100%;
 }
-.logoutButton {
-  position: absolute;
-  top: 454px;
-  left: 70px;
-  color: white;
-  cursor: pointer;
-  max-width: 100%;
-}
-.icons9CheckpointGoalFlagFo {
-  position: absolute;
-  top: 466px;
-  left: 54px;
-  width: 18px;
-  height: 18px;
-  object-fit: cover;
-}
 .lineIcon,
 .rectangleIcon {
   position: absolute;
@@ -376,39 +370,38 @@
   color: var(--color-white);
   font-family: var(--font-poppins);
 }
-.grp2{
+.grp2 {
   position: relative;
-  width : 555px;
+  width: 555px;
   height: 80%;
   margin-left: 320px;
   margin-top: 250px;
-  }
-  label {
-    position: relative;
-      color: #555;
-      display: block;
-      padding: 10px;
-      margin: 3px;
-      right: 250px;
-      text-size-adjust: 50px;
-      font-size: 30px;
-      margin-top: 40px;
-  
-  }
-  
-    input{
-      position: relative;
-      border: none;
-      background-color: rgb(229, 226, 226);
-      width: 80%;
-      border-radius: 0.25em;
-      text-align: center;
-      padding: 0.5em;
-      font-size: 25px;
-    }
-  .ip1{
-    font-size: 20px;
-    padding:0.4rem ;
-    width: 500px;
-    height: 50px;
-  }
+}
+label {
+  position: relative;
+  color: #555;
+  display: block;
+  padding: 10px;
+  margin: 3px;
+  right: 250px;
+  text-size-adjust: 50px;
+  font-size: 30px;
+  margin-top: 40px;
+}
+
+input {
+  position: relative;
+  border: none;
+  background-color: rgb(229, 226, 226);
+  width: 80%;
+  border-radius: 0.25em;
+  text-align: center;
+  padding: 0.5em;
+  font-size: 25px;
+}
+.ip1 {
+  font-size: 20px;
+  padding: 0.4rem;
+  width: 500px;
+  height: 50px;
+}
