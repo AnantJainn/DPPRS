@@ -29,7 +29,7 @@ const PopupTable = ({ reports, onClose }) => {
                   <tr key={index}>
                     <td>{report.name}</td>
                     <td>{report.ID}</td>
-                    <td>{report.mobilenumber}</td>
+                    <td>{report.mobileNumber}</td>
                     <td>{report.patrollingarea}</td>
                     <td>{report.pointscovered}</td>
                     <td>{report.startlocation}</td>
