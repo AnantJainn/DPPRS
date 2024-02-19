@@ -114,7 +114,7 @@ const AddProfileWeb = () => {
         sx={{ width: 180 }}
         variant="text"
         color="secondary"
-        href="/tracknowweb"
+        href="/Report"
         onClick={onTrackNowButtonClick}
       >
         Generate Report

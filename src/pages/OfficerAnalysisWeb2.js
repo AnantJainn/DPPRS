@@ -30,7 +30,7 @@ const OfficerAnalysisWeb2 = () => {
   }, [navigate]);
 
   const onTrackNowTextClick = useCallback(() => {
-    navigate("/tracknowweb");
+    navigate("/Report");
   }, [navigate]);
 
   const onEmerCheckTextClick = useCallback(() => {

@@ -62,7 +62,7 @@ function App() {
       <Route path="/OfficerAnalysisWeb2" element={<OfficerAnalysisWeb2 />} />
       <Route path="/EmercheckWeb" element={<EmercheckWeb />} />
       <Route path="/AddProfileWeb" element={<AddProfileWeb />} />
-      <Route path="/TracknowWeb" element={<TracknowWeb />} />
+      <Route path="/Report" element={<TracknowWeb />} />
       <Route path="/TracknowWebMap" element={<TracknowWebMap />} />
       <Route path="/SubmittedWeb" element={<SubmittedWeb />} />
       <Route path="/MapBox" element={<MapBox />} />

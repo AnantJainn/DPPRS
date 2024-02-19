@@ -7,7 +7,7 @@ const HomedashboardWeb = () => {
   const navigate = useNavigate();
 
   const onTrackNowButtonClick = useCallback(() => {
-    navigate("/tracknowweb");
+    navigate("/Report");
   }, [navigate]);
 
   const onOfficerAnalysisButtonClick = useCallback(() => {
@@ -78,7 +78,7 @@ const HomedashboardWeb = () => {
         sx={{ width: 180 }}
         variant="text"
         color="secondary"
-        href="/tracknowweb"
+        href="/Report"
         onClick={onTrackNowButtonClick}
       >
         Generate Report

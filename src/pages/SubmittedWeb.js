@@ -15,7 +15,7 @@ const SubmittedWeb = () => {
   }, [navigate]);
 
   const onTrackNowButtonClick = useCallback(() => {
-    navigate("/tracknowweb");
+    navigate("/Report");
   }, [navigate]);
 
   const onOfficerAnalysisButtonClick = useCallback(() => {

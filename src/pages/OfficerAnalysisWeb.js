@@ -14,7 +14,7 @@ const OfficerAnalysisWeb = () => {
   const [showPopup, setShowPopup] = useState(false); // State to manage popup visibility
 
   const onTrackNowButtonClick = useCallback(() => {
-    navigate("/tracknowweb");
+    navigate("/Report");
   }, [navigate]);
   const onDashboardButtonClick = useCallback(() => {
     // Please sync "Home/dashboard-web" to the project
@@ -110,7 +110,7 @@ const OfficerAnalysisWeb = () => {
         sx={{ width: 180 }}
         variant="text"
         color="secondary"
-        href="/tracknowweb"
+        href="/Report"
         onClick={onTrackNowButtonClick}
       >
         {" "}
