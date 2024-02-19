@@ -39,7 +39,7 @@ const EmercheckWeb = () => {
   const [coordinates, setCoordinates] = useState([]);
   const [toRender, setToRender] = useState(false);
   const [emerPoints, setEmerPoints] = useState([]);
-  const [popupVisible, setpopupVisible] = useState(false)
+  const [popupVisible, setpopupVisible] = useState(false);
   useEffect(() => {
     // navigator.geolocation.getCurrentPosition(function (position) {
     //   setLat(position.coords.latitude);
@@ -64,7 +64,7 @@ const EmercheckWeb = () => {
     setToRender((prevState) => !prevState);
   }
   function togglePopup() {
-    setpopupVisible(prev => !prev)
+    setpopupVisible((prev) => !prev);
   }
   function changeArbitary(e) {
     if (coordinates.length) {
@@ -101,23 +101,24 @@ const EmercheckWeb = () => {
     console.log(e);
   }
 
-
-
   function deleteEmergencyPoint(point) {
-    let checks = []
-    emerPoints.forEach(ele => {
-      if (ele.latitude === point.latitude && ele.longitude === point.longitude) {
-      } else checks.push(ele)
-    })
-    console.log(checks)
-    setEmerPoints(checks)
+    let checks = [];
+    emerPoints.forEach((ele) => {
+      if (
+        ele.latitude === point.latitude &&
+        ele.longitude === point.longitude
+      ) {
+      } else checks.push(ele);
+    });
+    console.log(checks);
+    setEmerPoints(checks);
     axios.post("http://172.16.200.150:3000/addemergency/12345", checks);
   }
   // searchLocation()
 
   function changeFocus(point) {
-    setLat(point.latitude)
-    setLng(point.longitude)
+    setLat(point.latitude);
+    setLng(point.longitude);
   }
 
   return (
@@ -147,7 +148,11 @@ const EmercheckWeb = () => {
         src="../icons8dashboardlayout48-1@2x.png"
       />
       <div className={styles.groupDiv}>
-        <img className={styles.polygonIcon} alt="" src="../Pol-removebg-preview.png" />
+        <img
+          className={styles.polygonIcon}
+          alt=""
+          src="../Pol-removebg-preview.png"
+        />
         {/* <img className={styles.polygonIcon} alt="" src="../polygon-1.svg" />
         <img className={styles.polygonIcon2} alt="" src="../polygon-3.svg" />
         <img className={styles.polygonIcon3} alt="" src="../polygon-4.svg" />
@@ -165,13 +170,13 @@ const EmercheckWeb = () => {
       <img className={styles.groupIcon} alt="" src="../group-14.svg" />
       <Button
         className={styles.trackNowButton}
-        sx={{ width: 134 }}
+        sx={{ width: 180 }}
         variant="text"
         color="secondary"
         href="/tracknowweb"
         onClick={onTrackNowButtonClick}
       >
-        Track now
+        Generate Report
       </Button>
       <img
         className={styles.icons8Dashboard481}
@@ -204,7 +209,7 @@ const EmercheckWeb = () => {
       >
         Add Profile
       </Button>
-      <img
+      {/* <img
         className={styles.icons9CheckpointGoalFlagFo}
         alt=""
         src="../icons8profile32-1@2x.png"
@@ -215,16 +220,19 @@ const EmercheckWeb = () => {
         variant="text"
         color="secondary"
         href="/report"
-        
       >
         Generate Report
-      </Button>
+      </Button> */}
       <img
         className={styles.icons8Profile321}
         alt=""
         src="../icons8profile32-1@2x.png"
       />
-      <img className={styles.groupIcon1} alt="" src="../Delhi_Police_Logo.png" />
+      <img
+        className={styles.groupIcon1}
+        alt=""
+        src="../Delhi_Police_Logo.png"
+      />
       (lng &&{" "}
       <div className={styles.contaimer}>
         <Map
@@ -234,7 +242,7 @@ const EmercheckWeb = () => {
             longitude: lng,
             latitude: lat,
             zoom: 12,
-            center: [lng, lat]
+            center: [lng, lat],
           }}
           style={{
             width: "800px",
@@ -259,26 +267,21 @@ const EmercheckWeb = () => {
                   onClick={(e) => clicked(e)}
                   longitude={ele[0]}
                   latitude={ele[1]}
-
                 />
               );
             })}
           {emerPoints &&
             emerPoints.map((ele, key) => {
               return (
-
                 <Marker
                   longitude={ele.longitude}
                   latitude={ele.latitude}
                   color="red"
                   key={key}
                   onClick={togglePopup}
-
                 />
-
               );
             })}
-
         </Map>
 
         <div className={styles.locationbox}>
@@ -288,23 +291,29 @@ const EmercheckWeb = () => {
             <div className={styles.coord}>latitude: {arbitary.latitude}</div>
           </div>
           <div className="desciption">
-            <textarea
-              name=""
-              id="text-area"
-              cols="20"
-              rows="5"
-            ></textarea>
+            <textarea name="" id="text-area" cols="20" rows="5"></textarea>
           </div>
-          <button className={styles.createCheckPoint} onClick={(e) => setCheckPoint()}>Create Checkpoint</button>
+          <button
+            className={styles.createCheckPoint}
+            onClick={(e) => setCheckPoint()}
+          >
+            Create Checkpoint
+          </button>
           <div className={styles.checkpoint}>
             <div>Emergency checkpoints</div>
             {emerPoints &&
               emerPoints.map((ele, ind) => {
                 return (
                   <div key={ind} className={styles.cell}>
-
-                    <div onClick={e => changeFocus(ele)} className={styles.descbutton}>{ele.description}</div>
-                    <button onClick={e => deleteEmergencyPoint(ele)}>Delete</button>
+                    <div
+                      onClick={(e) => changeFocus(ele)}
+                      className={styles.descbutton}
+                    >
+                      {ele.description}
+                    </div>
+                    <button onClick={(e) => deleteEmergencyPoint(ele)}>
+                      Delete
+                    </button>
                   </div>
                 );
               })}

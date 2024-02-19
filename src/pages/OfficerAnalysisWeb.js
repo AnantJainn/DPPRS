@@ -107,14 +107,14 @@ const OfficerAnalysisWeb = () => {
       <img className={styles.groupIcon} alt="" src="../group-14.svg" />{" "}
       <Button
         className={styles.trackNowButton}
-        sx={{ width: 134 }}
+        sx={{ width: 180 }}
         variant="text"
         color="secondary"
         href="/tracknowweb"
         onClick={onTrackNowButtonClick}
       >
         {" "}
-        Track now{" "}
+        Generate Report{" "}
       </Button>{" "}
       <img
         className={styles.icons8Dashboard481}

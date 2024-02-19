@@ -15,7 +15,7 @@ import SubmittedWeb from "./pages/SubmittedWeb";
 import Login from "./pages/Login";
 import MapBox from "./pages/MapBox";
 import { useEffect } from "react";
-import GrievanceForm from "./pages/Report";
+import GrievanceForm from "./pages/TracknowWeb";
 
 function App() {
   const action = useNavigationType();

@@ -6,6 +6,15 @@
   width: 283px;
   height: 982px;
 }
+.generateReportDiv1 {
+  position: absolute;
+  top: 92.77px;
+  left: 370px;
+  font-weight: 600;
+  display: inline-block;
+  width: 287px;
+  height: 31.25px;
+}
 .icons8Analytics301 {
   position: absolute;
   top: 269px;
@@ -87,6 +96,13 @@
   width: 27.7px;
   height: 10.52px;
 }
+.ip1 {
+  font-size: 20px;
+  /* padding: 0.4rem; */
+  /* width: 500px;
+  height: 50px; */
+}
+
 .ellipseIcon {
   position: absolute;
   top: 31.39px;
@@ -224,9 +240,10 @@
   position: absolute;
   top: 149.41px;
   left: 0;
-  width: 1232px;
-  height: 766.59px;
+  width: 100%; /* Set width to 100% to span the entire width of the page */
+  height: 100vh; /* Set height to 100vh to span the entire height of the viewport */
 }
+
 .lineIcon {
   top: 84.79px;
   left: 457.59px;
@@ -337,7 +354,7 @@
   transform-origin: 0 0;
 }
 .tracknowWebDiv {
-  position: relative;
+  /* position: relative; */
   background-color: var(--color-white);
   width: 100vw;
   height: 982px;
@@ -352,6 +369,17 @@
   width: 555px;
   margin-left: 500px;
   margin-top: 350px;
+}
+.grp2 {
+  position: relative;
+  width: 555px;
+  height: 80%;
+  margin-left: 320px;
+  margin-top: 250px;
+}
+
+.grp2 div {
+  margin-bottom: 20px; /* Reduced margin between each div */
 }
 label {
   position: relative;

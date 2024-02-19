@@ -5,7 +5,7 @@ import { useTable } from "react-table";
 import * as React from "react";
 import styles from "./OfficerAnalysisWeb2.module.css";
 import "./Table.css";
-import { LineChart, Line } from 'recharts';
+import { LineChart, Line } from "recharts";
 import {
   PieChart,
   Pie,
@@ -17,7 +17,6 @@ import {
   CartesianGrid,
   Bar,
 } from "recharts";
-
 
 const OfficerAnalysisWeb2 = () => {
   const navigate = useNavigate();
@@ -71,18 +70,17 @@ const OfficerAnalysisWeb2 = () => {
       {
         Header: "END CHECKPOINT",
         accessor: "end_check",
-      }
+      },
     ],
     []
-
   );
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });
   const piedata = [
-    { name: "Total Time  (in minutes)", police: 1040, fill: '#00C49F' },
-    { name: "Patroling Time (in minutes)", police: 740, fill: '#FF8042' },
-    { name: "Stop Time  (in minutes)", police: 300, fill: '#FFBB28' },
-    { name: "FIR Reported", police: 13, fill: '#0088FE' },
+    { name: "Total Time  (in minutes)", police: 1040, fill: "#00C49F" },
+    { name: "Patroling Time (in minutes)", police: 740, fill: "#FF8042" },
+    { name: "Stop Time  (in minutes)", police: 300, fill: "#FFBB28" },
+    { name: "FIR Reported", police: 13, fill: "#0088FE" },
   ];
   // const graphdata = [
   //   {
@@ -115,7 +113,6 @@ const OfficerAnalysisWeb2 = () => {
   //   },
   // ];
 
-
   return (
     <div className={styles.officerAnalysis2Web}>
       <div className={styles.rectangleDiv} />
@@ -137,7 +134,11 @@ const OfficerAnalysisWeb2 = () => {
         src="../icons8dashboardlayout48-1@2x.png"
       />
       <div className={styles.groupDiv}>
-        <img className={styles.polygonIcon} alt="" src="../Pol-removebg-preview.png" />
+        <img
+          className={styles.polygonIcon}
+          alt=""
+          src="../Pol-removebg-preview.png"
+        />
         {/* <img className={styles.polygonIcon} alt="" src="../polygon-12.svg" />
         <img className={styles.polygonIcon2} alt="" src="../polygon-32.svg" />
         <img className={styles.polygonIcon3} alt="" src="../polygon-42.svg" />
@@ -178,7 +179,11 @@ const OfficerAnalysisWeb2 = () => {
         alt=""
         src="../icons8profile32-1@2x.png"
       />
-      <img className={styles.groupIcon1} alt="" src="../Delhi_Police_Logo.png" />
+      <img
+        className={styles.groupIcon1}
+        alt=""
+        src="../Delhi_Police_Logo.png"
+      />
       <img className={styles.lineIcon} alt="" src="../line-1110.svg" />
       <div className={styles.groupDiv1}>
         <div className={styles.rectangleDiv4} />
@@ -193,7 +198,6 @@ const OfficerAnalysisWeb2 = () => {
       </div>
 
       <div className={styles.groupDiv4}>
-
         <div className="container">
           <table {...getTableProps()}>
             <thead>
@@ -220,10 +224,8 @@ const OfficerAnalysisWeb2 = () => {
               })}
             </tbody>
           </table>
-
         </div>
         <div className={styles.hemlo}>
-
           <PieChart width={500} height={400}>
             <Pie
               dataKey="police"
@@ -232,7 +234,6 @@ const OfficerAnalysisWeb2 = () => {
               cx={200}
               cy={200}
               outerRadius={175}
-
               fill="#fff"
               label
             />
@@ -263,10 +264,8 @@ const OfficerAnalysisWeb2 = () => {
             <CartesianGrid strokeDasharray="3 3" />
             <Bar dataKey="police" fill="#fff" background={{ fill: "#eee" }} />
           </BarChart>
-
         </div>
       </div>
-
     </div>
   );
 };

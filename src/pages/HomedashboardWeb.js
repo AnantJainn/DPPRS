@@ -58,7 +58,11 @@ const HomedashboardWeb = () => {
         src="../icons8dashboardlayout48-1@2x.png"
       />
       <div className={styles.groupDiv}>
-      <img className={styles.polygonIcon} alt="" src="../Pol-removebg-preview.png"/>
+        <img
+          className={styles.polygonIcon}
+          alt=""
+          src="../Pol-removebg-preview.png"
+        />
         {/* <img className={styles.polygonIcon} alt="" src="../polygon-11.svg" />
         <img className={styles.polygonIcon2} alt="" src="../polygon-31.svg" />
         <img className={styles.polygonIcon3} alt="" src="../polygon-4.svg" />
@@ -71,13 +75,13 @@ const HomedashboardWeb = () => {
       <img className={styles.groupIcon} alt="" src="../group-141.svg" />
       <Button
         className={styles.trackNowButton}
-        sx={{ width: 134 }}
+        sx={{ width: 180 }}
         variant="text"
         color="secondary"
         href="/tracknowweb"
         onClick={onTrackNowButtonClick}
       >
-        Track now
+        Generate Report
       </Button>
       <img
         className={styles.icons8Dashboard481}
@@ -119,13 +123,12 @@ const HomedashboardWeb = () => {
       >
         Add Profile
       </Button>
-      <Button
+      {/* <Button
         className={styles.logoutButton1}
         sx={{ width: 157 }}
         variant="text"
         color="secondary"
         href="/report"
-        
       >
         Generate Report
       </Button>
@@ -133,7 +136,7 @@ const HomedashboardWeb = () => {
         className={styles.icons9CheckpointGoalFlagFo}
         alt=""
         src="../icons8profile32-1@2x.png"
-      />
+      /> */}
       <Button
         className={styles.logoutButton}
         sx={{ width: 71 }}
@@ -149,8 +152,14 @@ const HomedashboardWeb = () => {
         alt=""
         src="../icons8profile32-1@2x.png"
       />
-      <img className={styles.groupIcon1} alt="" src="../Delhi_Police_Logo.png" />
-      <div className={styles.welcomeGarvDiv}>Welcome to Delhi Police Patrolling Service,</div>
+      <img
+        className={styles.groupIcon1}
+        alt=""
+        src="../Delhi_Police_Logo.png"
+      />
+      <div className={styles.welcomeGarvDiv}>
+        Welcome to Delhi Police Patrolling Service,
+      </div>
       <div className={styles.ourMissionIsToAchieveAnE}>
         Our mission is to achieve an environment of professionalism for the
         police force. It will push the police personnel to be accountable which
@@ -198,8 +207,10 @@ const HomedashboardWeb = () => {
           <p className={styles.addOrDelete}>of any police officer for</p>
           <p className={styles.patrolling}>patrolling.</p>
         </div>
-        <a href="/AddProfileWeb"><img className={styles.groupIcon4} alt="" src="../group-24.svg"/></a>
-        
+        <a href="/AddProfileWeb">
+          <img className={styles.groupIcon4} alt="" src="../group-24.svg" />
+        </a>
+
         <div className={styles.lineDiv} />
         <img className={styles.groupIcon3} alt="" src="../group-231.svg" />
       </div>
@@ -220,7 +231,9 @@ const HomedashboardWeb = () => {
           Immediately sends a notification to the police personnel in case of
           emergency.
         </div>
-        <a href="/EmercheckWeb"><img className={styles.groupIcon5} alt="" src="../group-24.svg"/></a>
+        <a href="/EmercheckWeb">
+          <img className={styles.groupIcon5} alt="" src="../group-24.svg" />
+        </a>
         <img className={styles.lineIcon4} alt="" src="../line-122.svg" />
         <img className={styles.groupIcon3} alt="" src="../group-23.svg" />
       </div>
@@ -241,7 +254,9 @@ const HomedashboardWeb = () => {
             the asked police offical about there patrolling
           </p>
         </div>
-        <a href="/OfficerAnalysisWeb"><img className={styles.groupIcon4} alt="" src="../group-24.svg"/></a>
+        <a href="/OfficerAnalysisWeb">
+          <img className={styles.groupIcon4} alt="" src="../group-24.svg" />
+        </a>
         <div className={styles.lineDiv1} />
         <img className={styles.groupIcon3} alt="" src="../group-231.svg" />
       </div>

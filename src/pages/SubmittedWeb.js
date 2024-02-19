@@ -78,7 +78,7 @@ const SubmittedWeb = () => {
         sx={{ width: 134 }}
         variant="text"
         color="secondary"
-        href="/tracknowweb"
+        href="/Report"
         onClick={onTrackNowButtonClick}
       >
         Track now

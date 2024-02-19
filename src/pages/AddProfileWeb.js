@@ -95,13 +95,11 @@ const AddProfileWeb = () => {
         src="../icons8dashboardlayout48-1@2x.png"
       />
       <div className={styles.groupDiv}>
-        <img className={styles.polygonIcon} alt="" src="../Pol-removebg-preview.png"/>
-        {/* <img className={styles.polygonIcon} alt="" src="../polygon-1.svg" />
-        <img className={styles.polygonIcon2} alt="" src="../polygon-3.svg" />
-        <img className={styles.polygonIcon3} alt="" src="../polygon-4.svg" />
-        <div className={styles.aANKHDiv}>AANddKH</div>
-        <img className={styles.ellipseIcon} alt="" src="../ellipse-6.svg" />
-        <img className={styles.ellipseIcon1} alt="" src="../ellipse-5.svg" /> */}
+        <img
+          className={styles.polygonIcon}
+          alt=""
+          src="../Pol-removebg-preview.png"
+        />
       </div>
       <img className={styles.ellipseIcon2} alt="" src="../ellipse-7.svg" />
       <img
@@ -113,13 +111,13 @@ const AddProfileWeb = () => {
       <img className={styles.groupIcon} alt="" src="../group-14.svg" />
       <Button
         className={styles.trackNowButton}
-        sx={{ width: 134 }}
+        sx={{ width: 180 }}
         variant="text"
         color="secondary"
         href="/tracknowweb"
         onClick={onTrackNowButtonClick}
       >
-        Track now
+        Generate Report
       </Button>
       <img
         className={styles.icons8Dashboard481}
@@ -157,22 +155,12 @@ const AddProfileWeb = () => {
         alt=""
         src="../icons8profile32-1@2x.png"
       />
+
       <img
-        className={styles.icons9CheckpointGoalFlagFo}
+        className={styles.groupIcon1}
         alt=""
-        src="../icons8profile32-1@2x.png"
+        src="../Delhi_Police_Logo.png"
       />
-      <Button
-        className={styles.logoutButton}
-        sx={{ width: 157 }}
-        variant="text"
-        color="secondary"
-        href="/report"
-        
-      >
-        Generate Report
-      </Button>
-      <img className={styles.groupIcon1} alt="" src="../Delhi_Police_Logo.png" />
       <div className={styles.groupDiv1}>
         <div className={styles.groupDiv2}>
           <img
