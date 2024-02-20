@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: -3px;
-  background-color: var(--color-indigo-100);
+  background-color: rgb(16, 16, 138);
   width: 283px;
   height: 982px;
 }
@@ -253,7 +253,7 @@
   top: 0;
   left: 0;
   border-radius: var(--br-lg);
-  background-color: var(--color-indigo-100);
+  background-color: rgb(16, 16, 138);
 }
 .groupDiv4 {
   top: 15.23px;
@@ -447,7 +447,7 @@
 .rectangleDiv8 {
   top: 227px;
   left: 1708.92px;
-  background-color: var(--color-indigo-200);
+  background-color: rgb(16, 16, 138);
   width: 459px;
   height: 459px;
   transform: rotate(45.42deg);

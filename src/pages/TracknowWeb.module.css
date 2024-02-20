@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: -3px;
-  background-color: var(--color-indigo-100);
+  background-color: rgb(16, 16, 138);
   width: 283px;
   height: 982px;
 }
@@ -152,10 +152,10 @@
 }
 .trackNowDiv {
   top: 197px;
-  left: 49px;
-  font-size: var(--font-size-base);
+  left: 23px;
+  font-size: 17px;
   display: inline-block;
-  width: 134px;
+  width: 199px;
   height: 27px;
 }
 .icons8Dashboard481 {
@@ -277,7 +277,7 @@
   top: 0;
   left: 0;
   border-radius: var(--br-lg);
-  background-color: var(--color-indigo-100);
+  background-color: rgb(16, 16, 138);
 }
 .groupDiv3,
 .trackNowDiv1 {
@@ -346,7 +346,7 @@
   position: absolute;
   top: 227px;
   left: 1708.92px;
-  background-color: var(--color-indigo-200);
+  background-color: rgb(16, 16, 138);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 459px;
   height: 459px;

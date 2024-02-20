@@ -9,7 +9,7 @@
 .rectangleDiv {
   top: 0;
   left: -3px;
-  background-color: var(--color-indigo-100);
+  background-color: rgb(16, 16, 138);
   width: 283px;
   height: 982px;
 }
@@ -288,7 +288,7 @@
   top: 0;
   left: 0;
   border-radius: var(--br-xl);
-  background-color: var(--color-indigo-100);
+  background-color: rgb(16, 16, 138);
 }
 .groupDiv4,
 .trackNowDiv {

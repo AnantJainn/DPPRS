@@ -1,5 +1,4 @@
 import { useCallback, useState, useEffect } from "react";
-import { Button, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "./TracknowWeb.module.css";
 import { collection, addDoc } from "firebase/firestore";
@@ -12,6 +11,7 @@ import {
   PDFViewer,
   Image,
 } from "@react-pdf/renderer";
+import { Button, TextField, Grid, Paper, Typography } from "@mui/material";
 import { db } from "../firebase";
 // import { Map, GeolocateControl, Marker } from "react-map-gl";
 // import "mapbox-gl/dist/mapbox-gl.css";
@@ -75,7 +75,7 @@ const GrievanceForm = () => {
   // useEffect(() => {
   //   const fetchRoute = async () => {
   //     const data = await axios.get(
-  //       `http://172.16.200.150:3000/patrolingofficers/${officer}/checkpoint`
+  //       http://172.16.200.150:3000/patrolingofficers/${officer}/checkpoint
   //     );
   //     if (!data) console.log("not able to fetch chekckpoints");
   //     console.log(data);
@@ -89,14 +89,14 @@ const GrievanceForm = () => {
   //   console.log(id);
   //   setOfficer(id);
   //   const officerData = await axios.get(
-  //     `http://172.16.200.150:3000/patrolingofficers/${id}/profile`
+  //     http://172.16.200.150:3000/patrolingofficers/${id}/profile
   //   );
   //   console.log(officerData);
   //   setOfficerData(officerData.data);
 
   //   const fetchRoute = async () => {
   //     const data = await axios.get(
-  //       `http://172.16.200.150:3000/patrolingofficers/${id}/checkpoint`
+  //       http://172.16.200.150:3000/patrolingofficers/${id}/checkpoint
   //     );
   //     if (!data) console.log("not able to fetch chekckpoints");
   //     console.log(data);
@@ -106,7 +106,7 @@ const GrievanceForm = () => {
 
   //   const fetchData = async () => {
   //     const data = await axios.get(
-  //       `http://172.16.200.150:3000/patrolingofficers/${id}/currentlocation`
+  //       http://172.16.200.150:3000/patrolingofficers/${id}/currentlocation
   //     );
   //     console.log(data);
   //     setLocation({
@@ -194,7 +194,7 @@ const GrievanceForm = () => {
       left: 90,
       width: "70%",
       height: "70%",
-      opacity: 0.2, // Adjust the opacity as needed
+      opacity: 0.2,
     },
     text1: {
       fontSize: 24,
@@ -207,10 +207,10 @@ const GrievanceForm = () => {
       <Document>
         <Page size="A4">
           <View style={style.container1}>
-            <Image style={styles.watermark} src="../Delhi_Police_Logo.png" />
+            <Image style={style.watermark} src="../Delhi_Police_Logo.png" />
             {/* Logo and Delhi Police */}
             <View style={style.header}>
-              <Image style={styles.logo} src="../Delhi_Police_Logo.png" />
+              <Image style={style.logo} src="../Delhi_Police_Logo.png" />
               <Text style={style.delhiPolice}>DELHI POLICE</Text>
             </View>
 
@@ -403,7 +403,7 @@ const GrievanceForm = () => {
         <img className={styles.lineIcon} alt="" src="../line-11.svg" />{" "}
         <div className={styles.groupDiv2}>
           {" "}
-          <div className={styles.rectangleDiv4} />{" "}
+          {/* <div className={styles.rectangleDiv4} />{" "} */}
         </div>{" "}
         <div className={styles.groupDiv3}>
           {" "}
@@ -413,7 +413,7 @@ const GrievanceForm = () => {
           Generate Report/ गश्ती रिपोर्ट
         </div>{" "}
         <img className={styles.lineIcon1} alt="" src="../line-12.svg" />
-        <form action="" onSubmit={handleSubmit} className={styles.grp2}>
+        {/* <form action="" onSubmit={handleSubmit} className={styles.grp2}>
           <div>
             <label htmlFor="Name">Name:</label>
             <p>नाम:</p>
@@ -532,7 +532,108 @@ const GrievanceForm = () => {
             </div>
           )}
           <div className="fileupload">{showPdf}</div>
-        </form>
+        </form> */}
+        <div style={{ padding: 20, marginTop: 200 }}>
+          <Paper elevation={3} style={{ padding: 20 }}>
+            <form onSubmit={handleSubmit}>
+              <Grid container spacing={3}>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    label="Name/नाम:"
+                    variant="outlined"
+                    fullWidth
+                    name="Name"
+                    value={formData.Name}
+                    onChange={handleInputChange}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    label="ID/पहचान:"
+                    variant="outlined"
+                    fullWidth
+                    name="ID"
+                    value={formData.ID}
+                    onChange={handleInputChange}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    label="Mobile Number/मोबाइल नम्बर:"
+                    variant="outlined"
+                    fullWidth
+                    name="mobileNumber"
+                    value={formData.mobileNumber}
+                    onChange={handleInputChange}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    label="Patrolling Area/गश्ती क्षेत्र:"
+                    variant="outlined"
+                    fullWidth
+                    name="patrollingarea"
+                    value={formData.patrollingarea}
+                    onChange={handleInputChange}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    label="Points Covered/अंक कवर किए गए:"
+                    variant="outlined"
+                    fullWidth
+                    name="pointscovered"
+                    value={formData.pointscovered}
+                    onChange={handleInputChange}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    label="Start Location/स्थान प्रारंभ करें:"
+                    variant="outlined"
+                    fullWidth
+                    name="startlocation"
+                    value={formData.startlocation}
+                    onChange={handleInputChange}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    label="End Location/अंतिम स्थान:"
+                    variant="outlined"
+                    fullWidth
+                    name="endlocation"
+                    value={formData.endlocation}
+                    onChange={handleInputChange}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    label="FIR Registered/एफआईआर दर्ज:"
+                    variant="outlined"
+                    fullWidth
+                    name="fir"
+                    value={formData.fir}
+                    onChange={handleInputChange}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Button type="submit" variant="contained" color="primary">
+                    Submit
+                  </Button>
+                </Grid>
+              </Grid>
+            </form>
+            {showPdf ? (
+              <div className="pdf-viewer">
+                <PDFViewer width="100%" height="500px">
+                  {generatePdf()}
+                </PDFViewer>
+              </div>
+            ) : null}{" "}
+            <div className="fileupload">{showPdf}</div>
+          </Paper>
+        </div>
       </div>{" "}
     </div>
   );

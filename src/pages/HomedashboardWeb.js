@@ -63,12 +63,6 @@ const HomedashboardWeb = () => {
           alt=""
           src="../Pol-removebg-preview.png"
         />
-        {/* <img className={styles.polygonIcon} alt="" src="../polygon-11.svg" />
-        <img className={styles.polygonIcon2} alt="" src="../polygon-31.svg" />
-        <img className={styles.polygonIcon3} alt="" src="../polygon-4.svg" />
-        <div className={styles.aANKHDiv}>AANKH</div>
-        <img className={styles.ellipseIcon} alt="" src="../ellipse-61.svg" />
-        <img className={styles.ellipseIcon1} alt="" src="../ellipse-51.svg" /> */}
       </div>
       <img className={styles.ellipseIcon2} alt="" src="../ellipse-71.svg" />
       <img className={styles.ellipseIcon3} alt="" src="../ellipse-81.svg" />
@@ -123,20 +117,6 @@ const HomedashboardWeb = () => {
       >
         Add Profile
       </Button>
-      {/* <Button
-        className={styles.logoutButton1}
-        sx={{ width: 157 }}
-        variant="text"
-        color="secondary"
-        href="/report"
-      >
-        Generate Report
-      </Button>
-      <img
-        className={styles.icons9CheckpointGoalFlagFo}
-        alt=""
-        src="../icons8profile32-1@2x.png"
-      /> */}
       <Button
         className={styles.logoutButton}
         sx={{ width: 71 }}
@@ -174,7 +154,7 @@ const HomedashboardWeb = () => {
           <div className={styles.groupDiv4}>
             <div className={styles.rectangleDiv5} />
           </div>
-          <div className={styles.trackNowDiv}>Generate_Report</div>
+          <div className={styles.trackNowDiv}>Generate Report</div>
         </div>
         <div className={styles.allowYouToTrackAPolicePe}>
           Allow you to generate a patrol report by entering various details.

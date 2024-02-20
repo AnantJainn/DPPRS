@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, Grid, Paper, Typography } from "@mui/material";
+
 import { useNavigate } from "react-router-dom";
 import styles from "./AddProfileWeb.module.css";
 
@@ -162,99 +163,99 @@ const AddProfileWeb = () => {
         src="../Delhi_Police_Logo.png"
       />
       <div className={styles.groupDiv1}>
-        <div className={styles.groupDiv2}>
-          <img
+        {/* <div className={styles.groupDiv2}> */}
+        {/* <img
             className={styles.rectangleIcon}
             alt=""
             src="../rectangle-34.svg"
-          />
-          <img className={styles.lineIcon} alt="" src="../line-11.svg" />
-          <div className={styles.groupDiv3}>
-            <div className={styles.rectangleDiv4} />
-          </div>
-          <div className={styles.groupDiv4}>
-            <div className={styles.rectangleDiv5} />
-          </div>
-          <div className={styles.addProfileDiv1}>Add Profile</div>
+          /> */}
+        <img className={styles.lineIcon} alt="" src="../line-11.svg" />
+        <div className={styles.groupDiv3}>
+          {/* <div className={styles.rectangleDiv4} /> */}
         </div>
+        <div className={styles.groupDiv4}>
+          <div className={styles.rectangleDiv5} />
+        </div>
+        <div className={styles.addProfileDiv1}>Add Profile</div>
+        {/* </div> */}
         <img className={styles.lineIcon1} alt="" src="../line-12.svg" />
       </div>
-      <form action="" onSubmit={handleSubmit} className={styles.grp3}>
-        <div input>
-          <div>
-            <label htmlFor="name">Full Name</label>
-            <input
-              className={styles.ap}
-              type="text"
-              placeholder="Enter Full name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="idnumber">ID Number</label>
-            <input
-              className={styles.ap}
-              type="text"
-              placeholder="Enter ID Number"
-              value={id}
-              onChange={(e) => setID(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="designation">Designation</label>
-            <input
-              className={styles.ap}
-              type="text"
-              placeholder="Enter Designation"
-              value={designation}
-              onChange={(e) => setDesignation(e.target.value)}
-            />
-          </div>
-          {/* <div>
-            <label htmlFor="dateOfBirth">Date Of Birth</label>
-            <input
-              className={styles.ap}
-              type="date"
-              id="dateOfBirth"
-              name="dateOfBirth"
-              value={dateOfBirth}
-              onChange={(e) => setDateOfBirth(e.target.value)}
-              required
-            />
-          </div> */}
-
-          <div>
-            <label htmlFor="bloodgroup">Blood Group</label>
-            <input
-              className={styles.ap}
-              type="text"
-              placeholder="Enter Blood Group"
-              value={bloodGroup}
-              onChange={(e) => setBloodGroup(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="area">Patrol Area</label>
-            <input
-              className={styles.ap}
-              type="text"
-              placeholder="Enter Area"
-              value={area}
-              onChange={(e) => setArea(e.target.value)}
-            />
-          </div>
-
-          <button type="submit" className={styles.groupButton3}>
-            Add Profile
-          </button>
-        </div>
-      </form>
-
-      <div className={styles.rectangleDiv8} />
-
-      <div className={styles.groupDiv7}>
-        <div className={styles.rectangleDiv9} />
+      <div
+        style={{
+          padding: "20px",
+          marginTop: 275,
+          width: 1000,
+          marginRight: 1000,
+          marginLeft: 350,
+        }}
+      >
+        <Paper
+          elevation={3}
+          style={{
+            padding: "30px",
+            marginBottom: "20px",
+          }}
+        >
+          <form onSubmit={handleSubmit}>
+            <Grid container spacing={3}>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  label="Full Name"
+                  variant="outlined"
+                  fullWidth
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  label="ID Number"
+                  variant="outlined"
+                  fullWidth
+                  value={id}
+                  onChange={(e) => setID(e.target.value)}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  label="Designation"
+                  variant="outlined"
+                  fullWidth
+                  value={designation}
+                  onChange={(e) => setDesignation(e.target.value)}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  label="Blood Group"
+                  variant="outlined"
+                  fullWidth
+                  value={bloodGroup}
+                  onChange={(e) => setBloodGroup(e.target.value)}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  label="Patrol Area"
+                  variant="outlined"
+                  fullWidth
+                  value={area}
+                  onChange={(e) => setArea(e.target.value)}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                >
+                  Add Profile
+                </Button>
+              </Grid>
+            </Grid>
+          </form>
+        </Paper>
       </div>
     </div>
   );
