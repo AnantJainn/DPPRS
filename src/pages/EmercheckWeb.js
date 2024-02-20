@@ -5,7 +5,7 @@ import styles from "./EmercheckWeb.module.css";
 import React, { useEffect, useState } from "react";
 import { Map, GeolocateControl, Marker, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import axios from "axios";
+// import axios from "axios";
 // import {IoLocationSharp} from "react-icons/fa";
 const EmercheckWeb = () => {
   const navigate = useNavigate();
@@ -40,22 +40,17 @@ const EmercheckWeb = () => {
   const [toRender, setToRender] = useState(false);
   const [emerPoints, setEmerPoints] = useState([]);
   const [popupVisible, setpopupVisible] = useState(false);
-  useEffect(() => {
-    // navigator.geolocation.getCurrentPosition(function (position) {
-    //   setLat(position.coords.latitude);
-    //   setLng(position.coords.longitude);
-    // });
+  // useEffect(() => {
+  //   async function addEmergencyCheck() {
+  //     const checkpointsemer = await axios.get(
+  //       "http://172.16.200.150:3000/fetchemergency/12345/"
+  //     );
 
-    async function addEmergencyCheck() {
-      const checkpointsemer = await axios.get(
-        "http://172.16.200.150:3000/fetchemergency/12345/"
-      );
-
-      console.log(checkpointsemer);
-      setEmerPoints(checkpointsemer.data);
-    }
-    addEmergencyCheck();
-  }, [lng, lat, coordinates]);
+  //     console.log(checkpointsemer);
+  //     setEmerPoints(checkpointsemer.data);
+  //   }
+  //   addEmergencyCheck();
+  // }, [lng, lat, coordinates]);
 
   function addMarker(e) {
     let coord = coordinates;
@@ -80,40 +75,40 @@ const EmercheckWeb = () => {
     addMarker(e);
   }
 
-  function setCheckPoint() {
-    // creating an object to send
-    let des = document.getElementById("text-area").value;
-    let checkpoint = {
-      latitude: arbitary.latitude,
-      longitude: arbitary.longitude,
-      description: des,
-    };
-    console.log(checkpoint);
-    // end point to store this
-    let prevEmerCheck = emerPoints;
-    prevEmerCheck.push(checkpoint);
-    setEmerPoints(prevEmerCheck);
-    console.log(emerPoints);
-    axios.post("http://172.16.200.150:3000/addemergency/12345", emerPoints);
-  }
+  // function setCheckPoint() {
+  //   // creating an object to send
+  //   let des = document.getElementById("text-area").value;
+  //   let checkpoint = {
+  //     latitude: arbitary.latitude,
+  //     longitude: arbitary.longitude,
+  //     description: des,
+  //   };
+  //   console.log(checkpoint);
+  //   // end point to store this
+  //   let prevEmerCheck = emerPoints;
+  //   prevEmerCheck.push(checkpoint);
+  //   setEmerPoints(prevEmerCheck);
+  //   console.log(emerPoints);
+  //   axios.post("http://172.16.200.150:3000/addemergency/12345", emerPoints);
+  // }
 
   function clicked(e) {
     console.log(e);
   }
 
-  function deleteEmergencyPoint(point) {
-    let checks = [];
-    emerPoints.forEach((ele) => {
-      if (
-        ele.latitude === point.latitude &&
-        ele.longitude === point.longitude
-      ) {
-      } else checks.push(ele);
-    });
-    console.log(checks);
-    setEmerPoints(checks);
-    axios.post("http://172.16.200.150:3000/addemergency/12345", checks);
-  }
+  // function deleteEmergencyPoint(point) {
+  //   let checks = [];
+  //   emerPoints.forEach((ele) => {
+  //     if (
+  //       ele.latitude === point.latitude &&
+  //       ele.longitude === point.longitude
+  //     ) {
+  //     } else checks.push(ele);
+  //   });
+  //   console.log(checks);
+  //   setEmerPoints(checks);
+  //   axios.post("http://172.16.200.150:3000/addemergency/12345", checks);
+  // }
   // searchLocation()
 
   function changeFocus(point) {
@@ -293,13 +288,13 @@ const EmercheckWeb = () => {
           <div className="desciption">
             <textarea name="" id="text-area" cols="20" rows="5"></textarea>
           </div>
-          <button
+          {/* <button
             className={styles.createCheckPoint}
             onClick={(e) => setCheckPoint()}
           >
             Create Checkpoint
-          </button>
-          <div className={styles.checkpoint}>
+          </button> */}
+          {/* <div className={styles.checkpoint}>
             <div>Emergency checkpoints</div>
             {emerPoints &&
               emerPoints.map((ele, ind) => {
@@ -317,7 +312,7 @@ const EmercheckWeb = () => {
                   </div>
                 );
               })}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
