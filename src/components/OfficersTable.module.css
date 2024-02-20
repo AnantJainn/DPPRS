@@ -1,0 +1,31 @@
+.tableContainer {
+  margin-left: 50px;
+  margin-top: 30px; /* Reduced margin-top for better alignment */
+}
+
+.table {
+  border: 1px solid black;
+  color: black;
+  background-color: #e6f7ff;
+  margin-top: 200px; /* Reduced margin-top for better alignment */
+  margin-left: 350px;
+  margin-right: auto; /* Centering the table horizontally */
+  border-collapse: collapse; /* Collapse borders for better alignment */
+}
+
+.table th,
+.table td {
+  padding: 5px;
+  border: 1px solid black;
+}
+.table tbody tr {
+  padding: 5px 0; /* Adjusted padding for rows vertically */
+}
+.table th {
+  background-color: #10108a;
+  color: #e6f7ff;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Alternate row background color */
+}

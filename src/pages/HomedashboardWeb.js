@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "./HomedashboardWeb.module.css";
-
+import OfficersTable from "../components/OfficersTable";
 const HomedashboardWeb = () => {
   const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ const HomedashboardWeb = () => {
 
   return (
     <div className={styles.homedashboardWebDiv}>
-      <img className={styles.rectangleIcon} alt="" src="../rectangle-33.svg" />
+      {/* <img className={styles.rectangleIcon} alt="" src="../rectangle-33.svg" /> */}
       <div className={styles.rectangleDiv} />
       <img
         className={styles.icons8Analytics301}
@@ -117,7 +117,7 @@ const HomedashboardWeb = () => {
       >
         Add Profile
       </Button>
-      <Button
+      {/* <Button
         className={styles.logoutButton}
         sx={{ width: 71 }}
         variant="text"
@@ -126,7 +126,7 @@ const HomedashboardWeb = () => {
         onClick={onLogoutButtonClick}
       >
         Logout
-      </Button>
+      </Button> */}
       <img
         className={styles.icons8Profile321}
         alt=""
@@ -145,106 +145,7 @@ const HomedashboardWeb = () => {
         police force. It will push the police personnel to be accountable which
         will in turn increase their efficiency and decrease the crime rate.
       </div>
-      <div className={styles.groupDiv1}>
-        <div className={styles.groupDiv2}>
-          <img className={styles.lineIcon} alt="" src="../line-111.svg" />
-          <div className={styles.groupDiv2}>
-            <div className={styles.rectangleDiv4} />
-          </div>
-          <div className={styles.groupDiv4}>
-            <div className={styles.rectangleDiv5} />
-          </div>
-          <div className={styles.trackNowDiv}>Generate Report</div>
-        </div>
-        <div className={styles.allowYouToTrackAPolicePe}>
-          Allow you to generate a patrol report by entering various details.
-        </div>
-        <img
-          className={styles.groupIcon2}
-          alt=""
-          src="../group-24.svg"
-          onClick={onGroupIcon1Click}
-        />
-        <img className={styles.lineIcon1} alt="" src="../line-121.svg" />
-        <img className={styles.groupIcon3} alt="" src="../group-23.svg" />
-      </div>
-      <div className={styles.groupDiv5} onClick={onGroupContainer8Click}>
-        <div className={styles.groupDiv2}>
-          <img className={styles.lineIcon} alt="" src="../line-112.svg" />
-          <div className={styles.groupDiv2}>
-            <div
-              className={styles.rectangleDiv4}
-              data-scroll-to="rectangleRectangle"
-            />
-          </div>
-          <div className={styles.groupDiv4}>
-            <div className={styles.rectangleDiv5} />
-          </div>
-          <div className={styles.addProfileDiv}>Add Profile</div>
-        </div>
-        <div className={styles.allowYouToTrackAPolicePe}>
-          <p className={styles.addOrDelete}>Add or delete profile</p>
-          <p className={styles.addOrDelete}>of any police officer for</p>
-          <p className={styles.patrolling}>patrolling.</p>
-        </div>
-        <a href="/AddProfileWeb">
-          <img className={styles.groupIcon4} alt="" src="../group-24.svg" />
-        </a>
-
-        <div className={styles.lineDiv} />
-        <img className={styles.groupIcon3} alt="" src="../group-231.svg" />
-      </div>
-      <div className={styles.groupDiv9}>
-        <div className={styles.groupDiv2}>
-          <img className={styles.lineIcon} alt="" src="../line-112.svg" />
-          <div className={styles.groupDiv2}>
-            <div className={styles.rectangleDiv4} />
-          </div>
-          <div className={styles.groupDiv4}>
-            <div className={styles.rectangleDiv5} />
-          </div>
-          <div className={styles.emergencyCheckpointDiv}>
-            Emergency checkpoint
-          </div>
-        </div>
-        <div className={styles.immediatelySendsANotificati}>
-          Immediately sends a notification to the police personnel in case of
-          emergency.
-        </div>
-        <a href="/EmercheckWeb">
-          <img className={styles.groupIcon5} alt="" src="../group-24.svg" />
-        </a>
-        <img className={styles.lineIcon4} alt="" src="../line-122.svg" />
-        <img className={styles.groupIcon3} alt="" src="../group-23.svg" />
-      </div>
-      <div className={styles.groupDiv13}>
-        <div className={styles.groupDiv2}>
-          <img className={styles.lineIcon} alt="" src="../line-111.svg" />
-          <div className={styles.groupDiv2}>
-            <div className={styles.rectangleDiv4} />
-          </div>
-          <div className={styles.groupDiv4}>
-            <div className={styles.rectangleDiv5} />
-          </div>
-          <div className={styles.officerAnalysisDiv}>Officer Analysis</div>
-        </div>
-        <div className={styles.givesYouAReportOfTheAske}>
-          <p className={styles.addOrDelete}>{`Gives you a report of `}</p>
-          <p className={styles.patrolling}>
-            the asked police offical about there patrolling
-          </p>
-        </div>
-        <a href="/OfficerAnalysisWeb">
-          <img className={styles.groupIcon4} alt="" src="../group-24.svg" />
-        </a>
-        <div className={styles.lineDiv1} />
-        <img className={styles.groupIcon3} alt="" src="../group-231.svg" />
-      </div>
-      <img
-        className={styles.icons8Logout301}
-        alt=""
-        src="../icons8logout30-1@2x.png"
-      />
+      <OfficersTable />
     </div>
   );
 };
