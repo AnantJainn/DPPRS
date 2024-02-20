@@ -342,7 +342,7 @@ const GrievanceForm = () => {
         onClick={onEllipseIcon2Click}
       />
       <img className={styles.groupIcon} alt="" src="../group-142.svg" />
-      <div className={styles.trackNowDiv}>Generate Report</div>
+      <div className={styles.trackNowDiv}>GENERATE REPORT</div>
       <img
         className={styles.icons8Dashboard481}
         alt=""

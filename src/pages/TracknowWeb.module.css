@@ -9,10 +9,11 @@
 .generateReportDiv1 {
   position: absolute;
   top: 92.77px;
-  left: 370px;
-  font-weight: 600;
+  left: 399px;
+  font-weight: 900;
+  /* font-size: 60; */
   display: inline-block;
-  width: 287px;
+  width: 325px;
   height: 31.25px;
 }
 .icons8Analytics301 {
@@ -151,11 +152,11 @@
   height: 16.66px;
 }
 .trackNowDiv {
-  top: 197px;
-  left: 23px;
-  font-size: 17px;
+  top: 200px;
+  left: 20px;
+  font-size: 15.8px;
   display: inline-block;
-  width: 199px;
+  width: 200px;
   height: 27px;
 }
 .icons8Dashboard481 {
@@ -271,7 +272,7 @@
 .trackNowDiv1 {
   position: absolute;
   width: 367.69px;
-  height: 217.33px;
+  height: 187.33px;
 }
 .rectangleDiv5 {
   top: 0;
