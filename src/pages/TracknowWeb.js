@@ -1,7 +1,7 @@
 import { useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./TracknowWeb.module.css";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import {
   Document,
@@ -41,6 +41,8 @@ const GrievanceForm = () => {
   const onAddProfileButtonClick = useCallback(() => {
     navigate("/AddProfileWeb");
   }, [navigate]);
+  const [profileOptions, setProfileOptions] = useState([]);
+  const [selectedProfile, setSelectedProfile] = useState({ name: "", id: "" });
   const handleImageUpload = async (index, e) => {
     const file = e.target.files[0];
     const storageRef = ref(storage, `fir_images/${file.name}`);
@@ -60,17 +62,13 @@ const GrievanceForm = () => {
       firDetails: updatedFIRDetails,
     });
   };
-  const [currentLocation, setCurrentLocation] = useState('');
-
   const [formData, setFormData] = useState({
     Name: "",
     ID: "",
     mobileNumber: "",
     patrollingarea: "",
     pointscovered: "",
-    // startlocation: "",
-    // endlocation: "",
-    firDetails: [], // Store FIR details as an array
+    firDetails: [],
   });
   const [showPdf, setShowPdf] = useState(false);
   const style = StyleSheet.create({
@@ -128,14 +126,7 @@ const GrievanceForm = () => {
       marginRight: 6,
     },
   });
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
+  const [currentLocation, setCurrentLocation] = useState("");
   const getCurrentLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -147,14 +138,20 @@ const GrievanceForm = () => {
           setCurrentLocation(`Latitude: ${latitude}, Longitude: ${longitude}`);
         },
         (error) => {
-          console.error('Error getting location:', error.message);
+          console.error("Error getting location:", error.message);
         }
       );
     } else {
-      console.error('Geolocation is not supported by your browser');
+      console.error("Geolocation is not supported by your browser");
     }
   };
-
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const handleFIRInputChange = (index, e) => {
     const { name, value } = e.target;
@@ -168,6 +165,26 @@ const GrievanceForm = () => {
       firDetails: updatedFIRDetails,
     });
   };
+  // const handleFIRInputChange = async (index, e) => {
+  //   const { name, value } = e.target;
+
+  //   // Fetch current location
+  //   const currentLocation = await getCurrentLocation();
+
+  //   // Update FIR details
+  //   const updatedFIRDetails = [...formData.firDetails];
+  //   updatedFIRDetails[index] = {
+  //     ...updatedFIRDetails[index],
+  //     [name]: value,
+  //     location: currentLocation, // Set the location field
+  //   };
+
+  //   // Update form data
+  //   setFormData({
+  //     ...formData,
+  //     firDetails: updatedFIRDetails,
+  //   });
+  // };
 
   const handleAddFIR = () => {
     setFormData((prevFormData) => ({
@@ -187,7 +204,8 @@ const GrievanceForm = () => {
       firDetails: updatedFIRDetails,
     });
   };
-  const generatePdf = (formData) => {
+
+  const generatePdf = (formData, selectedProfile) => {
     // Use formData to populate the PDF content
     console.log("formData in generatePdf:", formData);
     return (
@@ -208,14 +226,18 @@ const GrievanceForm = () => {
             <Text>{"  "}</Text>
             <Text>{"  "}</Text>
             <Text>{"  "}</Text>
-            <Text>
-              <Text style={style.text1}>Name:</Text> {formData.Name}
-            </Text>
-            <Text>{"  "}</Text>
-            <Text>
-              <Text style={style.text1}>ID:</Text> {formData.ID}
-            </Text>
-            <Text>{"  "}</Text>
+            {selectedProfile && (
+              <>
+                <Text>
+                  <Text style={style.text1}>Name:</Text> {selectedProfile.name}
+                </Text>
+                <Text>{"  "}</Text>
+                <Text>
+                  <Text style={style.text1}>ID:</Text> {selectedProfile.id}
+                </Text>
+                <Text>{"  "}</Text>
+              </>
+            )}
             <Text>
               <Text style={style.text1}>Mobile Number:</Text>{" "}
               {formData.mobileNumber}
@@ -252,6 +274,7 @@ const GrievanceForm = () => {
                 {/* Display uploaded image */}
                 {/* {fir.imageUrl && ( */}
                 <Image src={fir.imageUrl} style={style.img1} />
+                {console.log(fir.imageUrl)}
                 {/* )} */}
               </View>
             ))}
@@ -276,8 +299,8 @@ const GrievanceForm = () => {
     try {
       // Add Grievance data to Firestore collection
       const grievanceDocRef = await addDoc(collection(db, "Reports"), {
-        name: formData.Name,
-        ID: formData.ID,
+        name: selectedProfile.name, // Use selectedProfile.name instead of formData.Name
+        ID: selectedProfile.id, // Use selectedProfile.id instead of formData.ID
         mobileNumber: formData.mobileNumber,
         patrollingarea: formData.patrollingarea,
         pointscovered: formData.pointscovered,
@@ -319,6 +342,28 @@ const GrievanceForm = () => {
     } catch (error) {
       console.error("Error adding grievance report: ", error);
       alert("Error adding grievance report. Please try again.");
+    }
+  };
+  useEffect(() => {
+    const fetchProfiles = async () => {
+      const querySnapshot = await getDocs(collection(db, "Profiles"));
+      const profiles = [];
+      querySnapshot.forEach((doc) => {
+        const profile = doc.data();
+        profiles.push(profile);
+      });
+      setProfileOptions(profiles);
+      console.log(profiles);
+    };
+    fetchProfiles();
+  }, []);
+  const handleProfileChange = (event) => {
+    const { name, value } = event.target;
+    const selectedProfileIndex = profileOptions.findIndex(
+      (profile) => profile.name === value
+    );
+    if (selectedProfileIndex !== -1) {
+      setSelectedProfile(profileOptions[selectedProfileIndex]);
     }
   };
 
@@ -436,24 +481,52 @@ const GrievanceForm = () => {
             <form onSubmit={handleSubmit}>
               <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
-                  <TextField
+                  {/* <TextField
                     label="Name/नाम:"
                     variant="outlined"
                     fullWidth
                     name="Name"
                     value={formData.Name}
                     onChange={handleInputChange}
-                  />
+                  /> */}
+                  <TextField
+                    select
+                    label="Name"
+                    value={selectedProfile.name}
+                    name="name"
+                    onChange={handleProfileChange}
+                    fullWidth
+                  >
+                    {profileOptions.map((profile, index) => (
+                      <MenuItem key={index} value={profile.name}>
+                        {profile.name}
+                      </MenuItem>
+                    ))}
+                  </TextField>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <TextField
+                  {/* <TextField
                     label="ID/पहचान:"
                     variant="outlined"
                     fullWidth
                     name="ID"
                     value={formData.ID}
                     onChange={handleInputChange}
-                  />
+                  /> */}
+                  <TextField
+                    select
+                    label="ID"
+                    value={selectedProfile.id}
+                    name="id"
+                    onChange={handleProfileChange}
+                    fullWidth
+                  >
+                    {profileOptions.map((profile, index) => (
+                      <MenuItem key={index} value={profile.id}>
+                        {profile.id}
+                      </MenuItem>
+                    ))}
+                  </TextField>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <TextField
@@ -563,7 +636,11 @@ const GrievanceForm = () => {
                         fullWidth
                         required
                       />
-                      <Button onClick={getCurrentLocation} variant="outlined" color="primary">
+                      <Button
+                        onClick={getCurrentLocation}
+                        variant="outlined"
+                        color="primary"
+                      >
                         Get Current Location
                       </Button>
                     </Grid>
@@ -604,10 +681,17 @@ const GrievanceForm = () => {
                 </Grid>
               </Grid>
             </form>
-            {showPdf ? (
+            {/* {showPdf ? (
               <div className="pdf-viewer">
                 <PDFViewer width="100%" height="500px">
                   {generatePdf(formData)}
+                </PDFViewer>
+              </div>
+            ) : null} */}
+            {showPdf ? (
+              <div className="pdf-viewer">
+                <PDFViewer width="100%" height="500px">
+                  {generatePdf(formData, selectedProfile)}
                 </PDFViewer>
               </div>
             ) : null}
