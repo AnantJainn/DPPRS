@@ -175,6 +175,7 @@ const GrievanceForm = () => {
       await Promise.all(promises);
 
       setShowPdf(true);
+      generatePdf(formData);
 
       // Clear form data after successful submission
       setFormData({
@@ -195,7 +196,7 @@ const GrievanceForm = () => {
     }
   };
 
-  const generatePdf = () => {
+  const generatePdf = (formData) => {
     return (
       <Document>
         <Page size="A4">
@@ -531,10 +532,11 @@ const GrievanceForm = () => {
             {showPdf ? (
               <div className="pdf-viewer">
                 <PDFViewer width="100%" height="500px">
-                  {generatePdf()}
+                  {generatePdf(formData)}
                 </PDFViewer>
               </div>
-            ) : null}{" "}
+            ) : null}
+
             <div className="fileupload">{showPdf}</div>
           </Paper>
         </div>
