@@ -714,16 +714,6 @@ const GrievanceForm = () => {
                         {/* Add more crime types as needed */}
                       </TextField>
                     </Grid>
-                    {/* <Grid item xs={12} sm={3}>
-                      <TextField
-                        label="Location"
-                        name="location"
-                        value={fir.location}
-                        onChange={(e) => handleFIRInputChange(index, e)}
-                        fullWidth
-                        required
-                      />
-                    </Grid> */}
                     <Grid item xs={12} sm={3}>
                       <TextField
                         label="Location"
@@ -741,7 +731,16 @@ const GrievanceForm = () => {
                         Get Current Location
                       </Button>
                     </Grid>
-                    <Grid item xs={12} sm={3}>
+                    <Grid item xs={12} sm={2}>
+                      <TextField
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => handleImageUpload(index, e)}
+                        fullWidth
+                        required
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={1}>
                       <Button
                         onClick={() => handleRemoveFIR(index)}
                         variant="outlined"
@@ -750,15 +749,9 @@ const GrievanceForm = () => {
                         Remove FIR
                       </Button>
                     </Grid>
-                    <Grid item xs={12} sm={3}>
-                      <input
-                        type="file"
-                        accept="image/*"
-                        onChange={(e) => handleImageUpload(index, e)}
-                      />
-                    </Grid>
                   </React.Fragment>
                 ))}
+
                 <Grid item xs={12}>
                   <Button
                     onClick={handleAddFIR}
