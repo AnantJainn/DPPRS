@@ -141,62 +141,9 @@ const GrievanceForm = () => {
       firDetails: updatedFIRDetails,
     });
   };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      // Add Grievance data to Firestore collection
-      const grievanceDocRef = await addDoc(collection(db, "Reports"), {
-        name: formData.Name,
-        ID: formData.ID,
-        mobileNumber: formData.mobileNumber,
-        patrollingarea: formData.patrollingarea,
-        pointscovered: formData.pointscovered,
-        // startlocation: formData.startlocation,
-        // endlocation: formData.endlocation,
-      });
-
-      console.log("Report added successfully");
-      alert("Report added successfully");
-
-      // Add FIR data to Firestore collection
-      const promises = formData.firDetails.map(async (fir) => {
-        const docRef = await addDoc(collection(db, "FIRs"), {
-          datetime: fir.datetime,
-          crimetype: fir.crimetype,
-          location: fir.location,
-          grievanceId: grievanceDocRef.id, // Associate FIR with the grievance report
-        });
-        console.log("FIR added with ID: ", docRef.id);
-        return docRef;
-      });
-
-      await Promise.all(promises);
-
-      setShowPdf(true);
-      generatePdf(formData);
-
-      // Clear form data after successful submission
-      setFormData({
-        Name: "",
-        ID: "",
-        mobileNumber: "",
-        patrollingarea: "",
-        pointscovered: "",
-        // startlocation: "",
-        // endlocation: "",
-        firDetails: [],
-      });
-
-      alert("Grievance and FIRs submitted successfully");
-    } catch (error) {
-      console.error("Error adding grievance report: ", error);
-      alert("Error adding grievance report. Please try again.");
-    }
-  };
-
   const generatePdf = (formData) => {
+    // Use formData to populate the PDF content
+    console.log("formData in generatePdf:", formData);
     return (
       <Document>
         <Page size="A4">
@@ -210,7 +157,6 @@ const GrievanceForm = () => {
 
             {/* Title */}
             <Text style={style.title}>Patrolling Report</Text>
-            {/* <Text style={styles.title1}>गश्ती रिपोर्ट"</Text> */}
 
             {/* Form Data */}
             <Text>{"  "}</Text>
@@ -239,19 +185,26 @@ const GrievanceForm = () => {
               {formData.pointscovered}
             </Text>
             <Text>{"  "}</Text>
-            {/* <Text>
-              <Text style={style.text1}>Points covered:</Text>{" "}
-              {formData.startlocation}
-            </Text>
-            <Text>{"  "}</Text> */}
-            {/* <Text>
-              <Text style={style.text1}>Start Location:</Text>{" "}
-              {formData.endlocation}
-            </Text>
+
+            {/* FIR Details */}
+            <Text>{"  "}</Text>
             <Text>{"  "}</Text>
             <Text>
-              <Text style={style.text1}>End Location:</Text> {formData.fir}
-            </Text> */}
+              <Text style={style.text1}>FIR Details:</Text>
+            </Text>
+            {formData.firDetails.map((fir, index) => (
+              <View key={index}>
+                <Text>
+                  <Text style={style.text1}>DateTime:</Text> {fir.datetime}
+                </Text>
+                <Text>
+                  <Text style={style.text1}>Crime Type:</Text> {fir.crimetype}
+                </Text>
+                <Text>
+                  <Text style={style.text1}>Location:</Text> {fir.location}
+                </Text>
+              </View>
+            ))}
 
             {/* Signature Area */}
             <View style={style.signatureArea}>
@@ -265,6 +218,58 @@ const GrievanceForm = () => {
         </Page>
       </Document>
     );
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Add Grievance data to Firestore collection
+      const grievanceDocRef = await addDoc(collection(db, "Reports"), {
+        name: formData.Name,
+        ID: formData.ID,
+        mobileNumber: formData.mobileNumber,
+        patrollingarea: formData.patrollingarea,
+        pointscovered: formData.pointscovered,
+      });
+
+      console.log("Report added successfully");
+      alert("Report added successfully");
+
+      // Add FIR data to Firestore collection
+      const promises = formData.firDetails.map(async (fir) => {
+        const docRef = await addDoc(collection(db, "FIRs"), {
+          datetime: fir.datetime,
+          crimetype: fir.crimetype,
+          location: fir.location,
+          grievanceId: grievanceDocRef.id,
+        });
+        console.log("FIR added with ID: ", docRef.id);
+        return docRef;
+      });
+
+      await Promise.all(promises);
+
+      // Show PDF after data is submitted
+
+      generatePdf(formData); // Generate PDF with updated formData
+      setShowPdf(true); // Show PDF viewer
+
+      // Clear form data after successful submission
+      // setFormData({
+      //   Name: "",
+      //   ID: "",
+      //   mobileNumber: "",
+      //   patrollingarea: "",
+      //   pointscovered: "",
+      //   firDetails: [],
+      // });
+
+      alert("Grievance and FIRs submitted successfully");
+    } catch (error) {
+      console.error("Error adding grievance report: ", error);
+      alert("Error adding grievance report. Please try again.");
+    }
   };
 
   return (
