@@ -60,6 +60,8 @@ const GrievanceForm = () => {
       firDetails: updatedFIRDetails,
     });
   };
+  const [currentLocation, setCurrentLocation] = useState('');
+
   const [formData, setFormData] = useState({
     Name: "",
     ID: "",
@@ -133,6 +135,26 @@ const GrievanceForm = () => {
       [name]: value,
     });
   };
+
+  const getCurrentLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+
+          // You can use the obtained latitude and longitude to display the location
+          setCurrentLocation(`Latitude: ${latitude}, Longitude: ${longitude}`);
+        },
+        (error) => {
+          console.error('Error getting location:', error.message);
+        }
+      );
+    } else {
+      console.error('Geolocation is not supported by your browser');
+    }
+  };
+
 
   const handleFIRInputChange = (index, e) => {
     const { name, value } = e.target;
@@ -522,7 +544,7 @@ const GrievanceForm = () => {
                         {/* Add more crime types as needed */}
                       </TextField>
                     </Grid>
-                    <Grid item xs={12} sm={3}>
+                    {/* <Grid item xs={12} sm={3}>
                       <TextField
                         label="Location"
                         name="location"
@@ -531,6 +553,19 @@ const GrievanceForm = () => {
                         fullWidth
                         required
                       />
+                    </Grid> */}
+                    <Grid item xs={12} sm={3}>
+                      <TextField
+                        label="Location"
+                        name="location"
+                        value={currentLocation}
+                        onChange={(e) => setCurrentLocation(e.target.value)}
+                        fullWidth
+                        required
+                      />
+                      <Button onClick={getCurrentLocation} variant="outlined" color="primary">
+                        Get Current Location
+                      </Button>
                     </Grid>
                     <Grid item xs={12} sm={3}>
                       <Button
