@@ -2,6 +2,7 @@ import { useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./TracknowWeb.module.css";
 import { collection, addDoc } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import {
   Document,
   Page,
@@ -20,7 +21,7 @@ import { Button, Grid, TextField, MenuItem, Paper } from "@mui/material";
 
 const GrievanceForm = () => {
   const navigate = useNavigate();
-
+  const storage = getStorage();
   const onDashboardButtonClick = useCallback(() => {
     navigate("/homedashboardweb");
   }, [navigate]);
@@ -40,7 +41,25 @@ const GrievanceForm = () => {
   const onAddProfileButtonClick = useCallback(() => {
     navigate("/AddProfileWeb");
   }, [navigate]);
+  const handleImageUpload = async (index, e) => {
+    const file = e.target.files[0];
+    const storageRef = ref(storage, `fir_images/${file.name}`);
+    await uploadBytes(storageRef, file);
 
+    // Get the download URL for the uploaded image
+    const imageUrl = await getDownloadURL(storageRef);
+
+    // Update FIR details with the image URL
+    const updatedFIRDetails = [...formData.firDetails];
+    updatedFIRDetails[index] = {
+      ...updatedFIRDetails[index],
+      imageUrl: imageUrl,
+    };
+    setFormData({
+      ...formData,
+      firDetails: updatedFIRDetails,
+    });
+  };
   const [formData, setFormData] = useState({
     Name: "",
     ID: "",
@@ -100,6 +119,11 @@ const GrievanceForm = () => {
     text1: {
       fontSize: 24,
       fontWeight: 900,
+    },
+    img1: {
+      width: 75,
+      height: 75,
+      marginRight: 6,
     },
   });
   const handleInputChange = (e) => {
@@ -203,6 +227,10 @@ const GrievanceForm = () => {
                 <Text>
                   <Text style={style.text1}>Location:</Text> {fir.location}
                 </Text>
+                {/* Display uploaded image */}
+                {/* {fir.imageUrl && ( */}
+                <Image src={fir.imageUrl} style={style.img1} />
+                {/* )} */}
               </View>
             ))}
 
@@ -512,6 +540,13 @@ const GrievanceForm = () => {
                       >
                         Remove FIR
                       </Button>
+                    </Grid>
+                    <Grid item xs={12} sm={3}>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => handleImageUpload(index, e)}
+                      />
                     </Grid>
                   </React.Fragment>
                 ))}
