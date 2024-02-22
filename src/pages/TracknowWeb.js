@@ -207,7 +207,94 @@ const GrievanceForm = () => {
     });
   };
 
-  const generatePdf = (formData, selectedProfile) => {
+  // const generatePdf = (formData, selectedProfile) => {
+  //   // Use formData to populate the PDF content
+  //   console.log("formData in generatePdf:", formData);
+  //   return (
+  //     <Document>
+  //       <Page size="A4">
+  //         <View style={style.container1}>
+  //           <Image style={style.watermark} src="../Delhi_Police_Logo.png" />
+  //           {/* Logo and Delhi Police */}
+  //           <View style={style.header}>
+  //             <Image style={style.logo} src="../Delhi_Police_Logo.png" />
+  //             <Text style={style.delhiPolice}>DELHI POLICE</Text>
+  //           </View>
+
+  //           {/* Title */}
+  //           <Text style={style.title}>Patrolling Report</Text>
+
+  //           {/* Form Data */}
+  //           <Text>{"  "}</Text>
+  //           <Text>{"  "}</Text>
+  //           <Text>{"  "}</Text>
+  //           {selectedProfile && (
+  //             <>
+  //               <Text>
+  //                 <Text style={style.text1}>Name:</Text> {selectedProfile.name}
+  //               </Text>
+  //               <Text>{"  "}</Text>
+  //               <Text>
+  //                 <Text style={style.text1}>ID:</Text> {selectedProfile.id}
+  //               </Text>
+  //               <Text>{"  "}</Text>
+  //             </>
+  //           )}
+  //           <Text>
+  //             <Text style={style.text1}>Mobile Number:</Text>{" "}
+  //             {formData.mobileNumber}
+  //           </Text>
+  //           <Text>{"  "}</Text>
+  //           <Text>
+  //             <Text style={style.text1}>Date of Birth:</Text>{" "}
+  //             {formData.patrollingarea}
+  //           </Text>
+  //           <Text>{"  "}</Text>
+  //           <Text>
+  //             <Text style={style.text1}>Patrolling Area:</Text>{" "}
+  //             {formData.pointscovered}
+  //           </Text>
+  //           <Text>{"  "}</Text>
+
+  //           {/* FIR Details */}
+  //           <Text>{"  "}</Text>
+  //           <Text>{"  "}</Text>
+  //           <Text>
+  //             <Text style={style.text1}>FIR Details:</Text>
+  //           </Text>
+  //           {formData.firDetails.map((fir, index) => (
+  //             <View key={index}>
+  //               <Text>
+  //                 <Text style={style.text1}>DateTime:</Text> {fir.datetime}
+  //               </Text>
+  //               <Text>
+  //                 <Text style={style.text1}>Crime Type:</Text> {fir.crimetype}
+  //               </Text>
+  //               <Text>
+  //                 <Text style={style.text1}>Location:</Text> {fir.location}
+  //               </Text>
+  //               {/* Display uploaded image */}
+  //               {/* {fir.imageUrl && ( */}
+  //               <Image src={fir.imageUrl} style={style.img1} />
+  //               {console.log(fir.imageUrl)}
+  //               {/* )} */}
+  //             </View>
+  //           ))}
+
+  //           {/* Signature Area */}
+  //           <View style={style.signatureArea}>
+  //             <Text style={style.text1}>Signature: ____________</Text>
+  //             <Text>{"  "}</Text>
+  //             <Text style={style.text1}>Name: </Text>
+  //             <Text style={style.text1}>Designation: </Text>
+  //             <Text style={style.text1}>Police Station: </Text>
+  //           </View>
+  //         </View>
+  //       </Page>
+  //     </Document>
+  //   );
+  // };
+  const generatePdf = (formData, selectedProfile, currentLocation) => {
     // Use formData to populate the PDF content
     console.log("formData in generatePdf:", formData);
     return (
@@ -271,7 +358,14 @@ const GrievanceForm = () => {
                   <Text style={style.text1}>Crime Type:</Text> {fir.crimetype}
                 </Text>
                 <Text>
-                  <Text style={style.text1}>Location:</Text> {fir.location}
+                  {currentLocation && (
+                    <View>
+                      <Text>
+                        <Text style={style.text1}>Current Location:</Text>{" "}
+                        {currentLocation}
+                      </Text>
+                    </View>
+                  )}
                 </Text>
                 {/* Display uploaded image */}
                 {/* {fir.imageUrl && ( */}
@@ -280,6 +374,7 @@ const GrievanceForm = () => {
                 {/* )} */}
               </View>
             ))}
+            {/* Include current location */}
 
             {/* Signature Area */}
             <View style={style.signatureArea}>
@@ -686,14 +781,14 @@ const GrievanceForm = () => {
             {/* {showPdf ? (
               <div className="pdf-viewer">
                 <PDFViewer width="100%" height="500px">
-                  {generatePdf(formData)}
+                  {generatePdf(formData, selectedProfile)}
                 </PDFViewer>
               </div>
             ) : null} */}
             {showPdf ? (
               <div className="pdf-viewer">
                 <PDFViewer width="100%" height="500px">
-                  {generatePdf(formData, selectedProfile)}
+                  {generatePdf(formData, selectedProfile, currentLocation)}
                 </PDFViewer>
               </div>
             ) : null}
