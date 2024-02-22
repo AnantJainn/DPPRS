@@ -153,38 +153,40 @@ const GrievanceForm = () => {
     });
   };
 
-  const handleFIRInputChange = (index, e) => {
-    const { name, value } = e.target;
-    const updatedFIRDetails = [...formData.firDetails];
-    updatedFIRDetails[index] = {
-      ...updatedFIRDetails[index],
-      [name]: value,
-    };
-    setFormData({
-      ...formData,
-      firDetails: updatedFIRDetails,
-    });
-  };
-  // const handleFIRInputChange = async (index, e) => {
+  // const handleFIRInputChange = (index, e) => {
   //   const { name, value } = e.target;
-
-  //   // Fetch current location
-  //   const currentLocation = await getCurrentLocation();
-
-  //   // Update FIR details
   //   const updatedFIRDetails = [...formData.firDetails];
   //   updatedFIRDetails[index] = {
   //     ...updatedFIRDetails[index],
   //     [name]: value,
-  //     location: currentLocation, // Set the location field
   //   };
-
-  //   // Update form data
   //   setFormData({
   //     ...formData,
   //     firDetails: updatedFIRDetails,
   //   });
   // };
+  const handleFIRInputChange = (index, e) => {
+    const { name, value } = e.target;
+    const updatedFIRDetails = [...formData.firDetails];
+
+    // If the name of the input field is location, update it with the currentLocation
+    if (name === "location") {
+      updatedFIRDetails[index] = {
+        ...updatedFIRDetails[index],
+        [name]: currentLocation, // Update with the current location
+      };
+    } else {
+      updatedFIRDetails[index] = {
+        ...updatedFIRDetails[index],
+        [name]: value,
+      };
+    }
+
+    setFormData({
+      ...formData,
+      firDetails: updatedFIRDetails,
+    });
+  };
 
   const handleAddFIR = () => {
     setFormData((prevFormData) => ({
@@ -314,7 +316,7 @@ const GrievanceForm = () => {
         const docRef = await addDoc(collection(db, "FIRs"), {
           datetime: fir.datetime,
           crimetype: fir.crimetype,
-          location: fir.location,
+          location: currentLocation,
           grievanceId: grievanceDocRef.id,
         });
         console.log("FIR added with ID: ", docRef.id);
