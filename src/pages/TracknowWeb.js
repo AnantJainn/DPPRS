@@ -11,8 +11,9 @@ import {
   PDFViewer,
   Image,
 } from "@react-pdf/renderer";
-import { Button, TextField, Grid, Paper, Typography } from "@mui/material";
+import React from "react";
 import { db } from "../firebase";
+import { Button, Grid, TextField, MenuItem, Paper } from "@mui/material";
 // import { Map, GeolocateControl, Marker } from "react-map-gl";
 // import "mapbox-gl/dist/mapbox-gl.css";
 // import axios from "axios";
@@ -40,117 +41,17 @@ const GrievanceForm = () => {
     navigate("/AddProfileWeb");
   }, [navigate]);
 
-  // const onGroupButtonClick = useCallback(() => {
-  //   navigate("/tracknowweb1");
-  // }, [navigate]);
-
-  // const [lat, setLat] = useState(23.022168903229044);
-  // const [lng, setLng] = useState(72.54626279296826);
-  // const [coordinates, setCoordinates] = useState([]);
-  // const [toRender, setToRender] = useState(false);
-  // const [location, setLocation] = useState({
-  //   longitude: 0,
-  //   latitude: 0,
-  // });
-  // const [officer, setOfficer] = useState([]);
-  // const [checkpoints, setCheckPoints] = useState([]);
-  // const [officerData, setOfficerData] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const data = await axios.get(
-  //       "http://172.16.200.150:3000/patrolingofficers/12345/currentlocation"
-  //     );
-  //     console.log(data);
-  //     setLocation({
-  //       longitude: data.data[0].longitude,
-  //       latitude: data.data[0].latitude,
-  //     });
-  //     setToRender((prev) => !prev);
-  //     setTimeout(fetchData, 2000);
-  //   };
-  //   fetchData();
-  // }, []);
-
-  // useEffect(() => {
-  //   const fetchRoute = async () => {
-  //     const data = await axios.get(
-  //       http://172.16.200.150:3000/patrolingofficers/${officer}/checkpoint
-  //     );
-  //     if (!data) console.log("not able to fetch chekckpoints");
-  //     console.log(data);
-  //     setCheckPoints(data.data);
-  //   };
-  //   fetchRoute();
-  // }, []);
-
-  // async function searchOfficer(e) {
-  //   let id = document.getElementById("unique-id").value;
-  //   console.log(id);
-  //   setOfficer(id);
-  //   const officerData = await axios.get(
-  //     http://172.16.200.150:3000/patrolingofficers/${id}/profile
-  //   );
-  //   console.log(officerData);
-  //   setOfficerData(officerData.data);
-
-  //   const fetchRoute = async () => {
-  //     const data = await axios.get(
-  //       http://172.16.200.150:3000/patrolingofficers/${id}/checkpoint
-  //     );
-  //     if (!data) console.log("not able to fetch chekckpoints");
-  //     console.log(data);
-  //     setCheckPoints(data.data);
-  //   };
-  //   fetchRoute();
-
-  //   const fetchData = async () => {
-  //     const data = await axios.get(
-  //       http://172.16.200.150:3000/patrolingofficers/${id}/currentlocation
-  //     );
-  //     console.log(data);
-  //     setLocation({
-  //       longitude: data.data[0].longitude,
-  //       latitude: data.data[0].latitude,
-  //     });
-  //     setToRender((prev) => !prev);
-  //     setTimeout(fetchData, 2000);
-  //   };
-  //   fetchData();
-  // }
-  const initialFormData = {
+  const [formData, setFormData] = useState({
     Name: "",
     ID: "",
     mobileNumber: "",
     patrollingarea: "",
     pointscovered: "",
-    startlocation: "",
-    endlocation: "",
-    fir: "",
-  };
-
-  const [formData, setFormData] = useState(initialFormData);
+    // startlocation: "",
+    // endlocation: "",
+    firDetails: [], // Store FIR details as an array
+  });
   const [showPdf, setShowPdf] = useState(false);
-
-  const handleInputChange = (e) => {
-    const { name, value, type } = e.target;
-    let newValue = value;
-
-    if (type === "file") {
-      const fileInput = e.target;
-      if (fileInput.files && fileInput.files.length > 0) {
-        newValue = fileInput.files;
-      } else {
-        newValue = null;
-      }
-    }
-
-    setFormData({
-      ...formData,
-      [name]: newValue,
-    });
-  };
-
   const style = StyleSheet.create({
     container1: {
       padding: 20,
@@ -201,6 +102,98 @@ const GrievanceForm = () => {
       fontWeight: 900,
     },
   });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleFIRInputChange = (index, e) => {
+    const { name, value } = e.target;
+    const updatedFIRDetails = [...formData.firDetails];
+    updatedFIRDetails[index] = {
+      ...updatedFIRDetails[index],
+      [name]: value,
+    };
+    setFormData({
+      ...formData,
+      firDetails: updatedFIRDetails,
+    });
+  };
+
+  const handleAddFIR = () => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      firDetails: [
+        ...prevFormData.firDetails,
+        { datetime: "", crimetype: "", location: "" },
+      ],
+    }));
+  };
+
+  const handleRemoveFIR = (index) => {
+    const updatedFIRDetails = [...formData.firDetails];
+    updatedFIRDetails.splice(index, 1);
+    setFormData({
+      ...formData,
+      firDetails: updatedFIRDetails,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Add Grievance data to Firestore collection
+      const grievanceDocRef = await addDoc(collection(db, "Reports"), {
+        name: formData.Name,
+        ID: formData.ID,
+        mobileNumber: formData.mobileNumber,
+        patrollingarea: formData.patrollingarea,
+        pointscovered: formData.pointscovered,
+        // startlocation: formData.startlocation,
+        // endlocation: formData.endlocation,
+      });
+
+      console.log("Report added successfully");
+      alert("Report added successfully");
+
+      // Add FIR data to Firestore collection
+      const promises = formData.firDetails.map(async (fir) => {
+        const docRef = await addDoc(collection(db, "FIRs"), {
+          datetime: fir.datetime,
+          crimetype: fir.crimetype,
+          location: fir.location,
+          grievanceId: grievanceDocRef.id, // Associate FIR with the grievance report
+        });
+        console.log("FIR added with ID: ", docRef.id);
+        return docRef;
+      });
+
+      await Promise.all(promises);
+
+      setShowPdf(true);
+
+      // Clear form data after successful submission
+      setFormData({
+        Name: "",
+        ID: "",
+        mobileNumber: "",
+        patrollingarea: "",
+        pointscovered: "",
+        // startlocation: "",
+        // endlocation: "",
+        firDetails: [],
+      });
+
+      alert("Grievance and FIRs submitted successfully");
+    } catch (error) {
+      console.error("Error adding grievance report: ", error);
+      alert("Error adding grievance report. Please try again.");
+    }
+  };
 
   const generatePdf = () => {
     return (
@@ -245,19 +238,19 @@ const GrievanceForm = () => {
               {formData.pointscovered}
             </Text>
             <Text>{"  "}</Text>
-            <Text>
+            {/* <Text>
               <Text style={style.text1}>Points covered:</Text>{" "}
               {formData.startlocation}
             </Text>
-            <Text>{"  "}</Text>
-            <Text>
+            <Text>{"  "}</Text> */}
+            {/* <Text>
               <Text style={style.text1}>Start Location:</Text>{" "}
               {formData.endlocation}
             </Text>
             <Text>{"  "}</Text>
             <Text>
               <Text style={style.text1}>End Location:</Text> {formData.fir}
-            </Text>
+            </Text> */}
 
             {/* Signature Area */}
             <View style={style.signatureArea}>
@@ -273,34 +266,6 @@ const GrievanceForm = () => {
     );
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      // Add a new document with a generated ID to the "Reports" collection using addDoc
-      await addDoc(collection(db, "Reports"), {
-        name: formData.Name,
-        ID: formData.ID,
-        mobileNumber: formData.mobileNumber,
-        patrollingarea: formData.patrollingarea,
-        pointscovered: formData.pointscovered,
-        startlocation: formData.startlocation,
-        endlocation: formData.endlocation,
-        fir: formData.fir,
-      });
-
-      console.log("Report added successfully");
-      alert("Report added successfully");
-      // setFormData(true);
-      setShowPdf(true);
-
-      // Clear form data after successful submission
-      // setFormData(initialFormData);
-    } catch (error) {
-      console.error("Error adding report: ", error);
-      alert("Error adding report. Please try again.");
-    }
-  };
   return (
     <div className={styles.tracknowWebDiv}>
       <div className={styles.rectangleDiv} />
@@ -401,10 +366,7 @@ const GrievanceForm = () => {
           src="../rectangle-34.svg"
         />{" "} */}
         <img className={styles.lineIcon} alt="" src="../line-11.svg" />{" "}
-        <div className={styles.groupDiv2}>
-          {" "}
-          {/* <div className={styles.rectangleDiv4} />{" "} */}
-        </div>{" "}
+        <div className={styles.groupDiv2}> </div>{" "}
         <div className={styles.groupDiv3}>
           {" "}
           <div className={styles.rectangleDiv5} />{" "}
@@ -413,126 +375,6 @@ const GrievanceForm = () => {
           Generate Report/ गश्ती रिपोर्ट
         </div>{" "}
         <img className={styles.lineIcon1} alt="" src="../line-12.svg" />
-        {/* <form action="" onSubmit={handleSubmit} className={styles.grp2}>
-          <div>
-            <label htmlFor="Name">Name:</label>
-            <p>नाम:</p>
-            <input
-              type="text"
-              className={styles.ip1}
-              required
-              onChange={handleInputChange}
-              name="name"
-              id="Name"
-              placeholder="Enter your name / तपाईंको नाम प्रविष्ट गर्नुहोस्"
-            />
-          </div>
-          <div>
-            <label htmlFor="ID">ID:</label>
-            <p>पहचान:</p>
-            <input
-              type="number"
-              className={styles.ip1}
-              placeholder="Enter your ID/अपनी आईडी दर्ज करें"
-              required
-              onChange={handleInputChange}
-              name="ID"
-              id="ID"
-            />
-          </div>
-          <div>
-            <label htmlFor="mobileNumber-en">Mobile Number:</label>
-            <p>मोबाइल नम्बर:</p>
-            <input
-              type="number"
-              className={styles.ip1}
-              id="mobileNumber-en"
-              name="mobileNumber"
-              placeholder="Enter your mobile number / तपाईंको मोबाइल नम्बर प्रविष्ट गर्नुहोस्"
-              required
-              onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="patrollingarea">Patrolling Area</label>
-            <p>गश्ती क्षेत्र:</p>
-            <input
-              type="text"
-              className={styles.ip1}
-              id="patrollingarea"
-              name="patrollingarea"
-              placeholder="Which area are you patrolling?/आप किस क्षेत्र में गश्त कर रहे हैं?"
-              required
-              onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="pointscovered">Points covered</label>
-            <p>अंक कवर किए गए:</p>
-            <input
-              type="number"
-              className={styles.ip1}
-              id="pointscovered"
-              name="pointscovered"
-              placeholder="How many points have you covered?/आपने कितने बिंदुओं को कवर किया है?"
-              required
-              onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="startlocation">Start Location</label>
-            <p>स्थान प्रारंभ करें:</p>
-            <input
-              type="text"
-              className={styles.ip1}
-              id="startlocation"
-              name="startlocation"
-              placeholder="From which location did you start?/आपने किस स्थान से शुरुआत की?"
-              required
-              onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="endlocation">End Location</label>
-            <p>अंतिम स्थान:</p>
-            <input
-              type="text"
-              className={styles.ip1}
-              id="endlocation"
-              name="endlocation"
-              placeholder="What was your last location?/आपका अंतिम स्थान क्या था?"
-              required
-              onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="fir">FIR Registered</label>
-            <p>एफआईआर दर्ज:</p>
-            <input
-              type="number"
-              className={styles.ip1}
-              id="fir"
-              name="fir"
-              placeholder="How many FIR have you registered?/आपने कितनी एफआईआर दर्ज कराई हैं?"
-              required
-              onChange={handleInputChange}
-            />
-          </div>
-          {showPdf ? (
-            <div className="pdf-viewer">
-              <PDFViewer width="100%" height="500px">
-                {generatePdf()}
-              </PDFViewer>
-            </div>
-          ) : (
-            <div className="submit-button-wrapper">
-              <button type="submit" className="button">
-                Submit
-              </button>
-            </div>
-          )}
-          <div className="fileupload">{showPdf}</div>
-        </form> */}
         <div style={{ padding: 20, marginTop: 200 }}>
           <Paper elevation={3} style={{ padding: 20 }}>
             <form onSubmit={handleSubmit}>
@@ -587,7 +429,7 @@ const GrievanceForm = () => {
                     onChange={handleInputChange}
                   />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                {/* <Grid item xs={12} sm={6}>
                   <TextField
                     label="Start Location/स्थान प्रारंभ करें:"
                     variant="outlined"
@@ -606,7 +448,7 @@ const GrievanceForm = () => {
                     value={formData.endlocation}
                     onChange={handleInputChange}
                   />
-                </Grid>
+                </Grid> */}
                 <Grid item xs={12} sm={6}>
                   <TextField
                     label="FIR Registered/एफआईआर दर्ज:"
@@ -617,6 +459,68 @@ const GrievanceForm = () => {
                     onChange={handleInputChange}
                   />
                 </Grid>
+                {formData.firDetails.map((fir, index) => (
+                  <React.Fragment key={index}>
+                    <Grid item xs={12} sm={3}>
+                      <TextField
+                        type="datetime-local"
+                        label="Date/Time"
+                        name="datetime"
+                        value={fir.datetime}
+                        onChange={(e) => handleFIRInputChange(index, e)}
+                        fullWidth
+                        required
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={3}>
+                      <TextField
+                        select
+                        label="Crime Type"
+                        name="crimetype"
+                        value={fir.crimetype}
+                        onChange={(e) => handleFIRInputChange(index, e)}
+                        fullWidth
+                        required
+                      >
+                        <MenuItem value="Theft">Theft</MenuItem>
+                        <MenuItem value="Assault">Assault</MenuItem>
+                        <MenuItem value="Vandalism">Vandalism</MenuItem>
+                        {/* Add more crime types as needed */}
+                      </TextField>
+                    </Grid>
+                    <Grid item xs={12} sm={3}>
+                      <TextField
+                        label="Location"
+                        name="location"
+                        value={fir.location}
+                        onChange={(e) => handleFIRInputChange(index, e)}
+                        fullWidth
+                        required
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={3}>
+                      <Button
+                        onClick={() => handleRemoveFIR(index)}
+                        variant="outlined"
+                        color="secondary"
+                      >
+                        Remove FIR
+                      </Button>
+                    </Grid>
+                  </React.Fragment>
+                ))}
+                <Grid item xs={12}>
+                  <Button
+                    onClick={handleAddFIR}
+                    variant="contained"
+                    color="primary"
+                  >
+                    Add FIR
+                  </Button>
+                </Grid>
+
+                {/* Submit Button */}
+
                 <Grid item xs={12}>
                   <Button type="submit" variant="contained" color="primary">
                     Submit

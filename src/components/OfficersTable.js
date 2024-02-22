@@ -29,37 +29,6 @@ const OfficersTable = () => {
   }, []);
 
   return (
-    // <TableContainer
-    //   component={Paper}
-    //   style={{ maxWidth: 1000, marginTop: 220, marginLeft: 360 }}
-    // >
-    //   <Table size="small" style={{ padding: 100 }}>
-    //     <TableHead>
-    //       <TableRow>
-    //         <TableCell>Name</TableCell>
-    //         <TableCell>ID</TableCell>
-    //         <TableCell>Designation</TableCell>
-    //         <TableCell>Area</TableCell>
-    //         <TableCell>Blood Group</TableCell>
-    //       </TableRow>
-    //     </TableHead>
-    //     <TableBody style={{ padding: 100 }}>
-    //       {officers.map((officer) => (
-    //         <TableRow key={officer.id}>
-    //           <TableCell style={{ width: "10%" }}>{officer.name}</TableCell>
-    //           <TableCell style={{ width: "10%" }}>{officer.id}</TableCell>
-    //           <TableCell style={{ width: "10%" }}>
-    //             {officer.designation}
-    //           </TableCell>
-    //           <TableCell style={{ width: "10%" }}>{officer.area}</TableCell>
-    //           <TableCell style={{ width: "10%" }}>
-    //             {officer.bloodGroup}
-    //           </TableCell>
-    //         </TableRow>
-    //       ))}
-    //     </TableBody>
-    //   </Table>
-    // </TableContainer>
     <table className={styles.table}>
       <thead>
         <tr>
