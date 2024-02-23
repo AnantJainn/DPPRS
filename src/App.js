@@ -16,7 +16,7 @@ import Login from "./pages/Login";
 import MapBox from "./pages/MapBox";
 import { useEffect } from "react";
 import GrievanceForm from "./pages/TracknowWeb";
-
+import FIRAnalysis from "./pages/FIRAnalysis";
 function App() {
   const action = useNavigationType();
   const location = useLocation();
@@ -67,7 +67,7 @@ function App() {
       <Route path="/SubmittedWeb" element={<SubmittedWeb />} />
       <Route path="/MapBox" element={<MapBox />} />
       <Route path="/Report" element={<GrievanceForm />} />
-      {/* <Route path="/" element ={<Login />}/> */}
+      <Route path="/firanalysis" element={<FIRAnalysis />} />
     </Routes>
   );
 }

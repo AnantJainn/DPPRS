@@ -2,17 +2,15 @@ import React, { useCallback, useState, useEffect } from "react";
 import { Button, TextField, Grid, Paper, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "./OfficerAnalysisWeb.module.css";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../firebase";
-import PopupTable from "../components/PopupTable";
-const OfficerAnalysisWeb = () => {
+import FIRTable from "../components/FIRTable";
+const FIRAnalysis = () => {
   const navigate = useNavigate();
-  const [reports, setReports] = useState([]);
-  const [filteredReports, setFilteredReports] = useState([]);
-  const [name, setFname] = useState("");
-  const [ID, setID] = useState("");
-  const [showPopup, setShowPopup] = useState(false); // State to manage popup visibility
-  const [firData, setFirData] = useState({});
+  const [location, setLocation] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [firData, setFirData] = useState([]);
+
   const onTrackNowButtonClick = useCallback(() => {
     navigate("/Report");
   }, [navigate]);
@@ -29,66 +27,45 @@ const OfficerAnalysisWeb = () => {
   const onAddProfileButtonClick = useCallback(() => {
     navigate("/AddProfileWeb");
   }, [navigate]);
-
-  const fetchReports = async () => {
-    const reportsCollection = collection(db, "Reports");
-    const snapshot = await getDocs(reportsCollection);
-    const reportData = snapshot.docs.map((doc) => ({
-      ID: doc.id,
-      ...doc.data(),
-    }));
-    setReports(reportData);
-  };
+  //   const fetchFIRs = async () => {
+  //     const firCollection = collection(db, "FIRs");
+  //     const q = query(firCollection, where("location", "==", location));
+  //     const snapshot = await getDocs(q);
+  //     const firData = snapshot.docs.map((doc) => ({
+  //       id: doc.id,
+  //       ...doc.data(),
+  //     }));
+  //     setFirData(firData);
+  //   };
   const fetchFIRs = async () => {
     const firCollection = collection(db, "FIRs");
     const snapshot = await getDocs(firCollection);
-    const firData = snapshot.docs.reduce((acc, doc) => {
-      const data = doc.data();
-      const grievanceId = data.grievanceId;
-      if (!acc[grievanceId]) {
-        acc[grievanceId] = [];
-      }
-      acc[grievanceId].push({
-        id: doc.id,
-        ...data,
-      });
-      return acc;
-    }, {});
+
+    const firData = snapshot.docs
+      .map((doc) => ({ id: doc.id, ...doc.data() }))
+      .filter((fir) =>
+        fir.location.toLowerCase().includes(location.toLowerCase())
+      );
 
     setFirData(firData);
-    console.log("FIRs Data:", firData);
   };
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (name && ID) {
-  //     const filtered = reports.filter(
-  //       (report) => report.name === name && report.ID === ID
-  //     );
-  //     setFilteredReports(filtered);
-  //     setShowPopup(true); // Show popup after setting filtered reports
-  //   } else {
-  //     // If name or ID is empty, reset filteredReports to all reports
-  //     setFilteredReports(reports);
-  //   }
-  // };
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (name && ID) {
-      const filtered = reports.filter(
-        (report) => report.name === name && report.ID === ID.trim() // Trim ID
-      );
-      setFilteredReports(filtered);
+    if (location) {
+      await fetchFIRs();
       setShowPopup(true);
-    } else {
-      setFilteredReports(reports);
     }
   };
 
   const handleClosePopup = () => {
     setShowPopup(false);
+    // Clear any form data or reset states as needed
+    setLocation("");
+    setFirData([]);
   };
+
   useEffect(() => {
-    fetchReports();
     fetchFIRs();
   }, []);
 
@@ -196,7 +173,7 @@ const OfficerAnalysisWeb = () => {
           {" "}
           <div className={styles.rectangleDiv5} />{" "}
         </div>{" "}
-        <div className={styles.officerAnalysisDiv1}>Officer Analysis</div>{" "}
+        <div className={styles.officerAnalysisDiv1}>FIR Analysis</div>{" "}
       </div>{" "}
       <img className={styles.lineIcon1} alt="" src="../line-12.svg" />
       <div
@@ -211,27 +188,15 @@ const OfficerAnalysisWeb = () => {
         <form onSubmit={handleSubmit}>
           <Grid container spacing={3} alignItems="center" justify="center">
             <Grid item xs={12} style={{ textAlign: "center" }}>
-              <Typography variant="subtitle1">Full Name</Typography>
+              <Typography variant="subtitle1">Location</Typography>
             </Grid>
             <Grid item xs={12} style={{ textAlign: "center" }}>
               <TextField
-                label="Full Name"
+                label="Location"
                 variant="outlined"
                 fullWidth
-                value={name}
-                onChange={(e) => setFname(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={12} style={{ textAlign: "center" }}>
-              <Typography variant="subtitle1">ID Number</Typography>
-            </Grid>
-            <Grid item xs={12} style={{ textAlign: "center" }}>
-              <TextField
-                label="ID Number"
-                variant="outlined"
-                fullWidth
-                value={ID}
-                onChange={(e) => setID(e.target.value)}
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
               />
             </Grid>
             <Grid
@@ -246,18 +211,10 @@ const OfficerAnalysisWeb = () => {
           </Grid>
         </form>
       </div>
-      {/* {showPopup && (
-        <PopupTable reports={filteredReports} onClose={handleClosePopup} />
-      )} */}
-      {showPopup && (
-        <PopupTable
-          reports={filteredReports}
-          firData={firData}
-          onClose={handleClosePopup}
-        />
-      )}
+      {/* {showPopup && <FIRTable firData={firData} onClose={handleClosePopup} />} */}
+      {showPopup && <FIRTable firData={firData} onClose={handleClosePopup} />}
     </div>
   );
 };
 
-export default OfficerAnalysisWeb;
+export default FIRAnalysis;

@@ -194,7 +194,13 @@
   left: 65px;
   cursor: pointer;
 }
-
+.firAnalysisButton {
+  position: absolute;
+  color: white;
+  top: 296px;
+  left: 65px;
+  cursor: pointer;
+}
 .icons8CheckpointGoalFlagFo {
   position: absolute;
   top: 342px;

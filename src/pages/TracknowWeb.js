@@ -134,9 +134,21 @@ const GrievanceForm = () => {
         (position) => {
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
+          const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
 
-          // You can use the obtained latitude and longitude to display the location
-          setCurrentLocation(`Latitude: ${latitude}, Longitude: ${longitude}`);
+          fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+              const fullAddress = {
+                road: data.address.road || "",
+                city: data.address.city || "",
+                country: data.address.country || "",
+              };
+              // You can perform any additional processing or validation here
+              setCurrentLocation(data.display_name);
+              console.log(data.display_name);
+            })
+            .catch((error) => console.error("Error fetching address:", error));
         },
         (error) => {
           console.error("Error getting location:", error.message);

@@ -5,7 +5,9 @@ import styles from "./HomedashboardWeb.module.css";
 import OfficersTable from "../components/OfficersTable";
 const HomedashboardWeb = () => {
   const navigate = useNavigate();
-
+  const onFIRAnalysis = useCallback(() => {
+    navigate("/firanalysis");
+  }, [navigate]);
   const onTrackNowButtonClick = useCallback(() => {
     navigate("/Report");
   }, [navigate]);
@@ -91,6 +93,16 @@ const HomedashboardWeb = () => {
         onClick={onOfficerAnalysisButtonClick}
       >
         Officer Analysis
+      </Button>
+      <Button
+        className={styles.firAnalysisButton}
+        sx={{ width: 157 }}
+        variant="text"
+        color="secondary"
+        href="/firanalysis"
+        onClick={onFIRAnalysis}
+      >
+        FIR Analysis
       </Button>
       <Button
         className={styles.emerCheckButton}
