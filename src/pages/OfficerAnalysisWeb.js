@@ -161,16 +161,7 @@ const OfficerAnalysisWeb = () => {
       />{" "}
       <div className={styles.groupDiv1}>
         {" "}
-        {/* <img
-          className={styles.rectangleIcon}
-          alt=""
-          src="../rectangle-34.svg"
-        />{" "} */}
         <img className={styles.lineIcon} alt="" src="../line-11.svg" />{" "}
-        {/* <div className={styles.groupDiv2}>
-          {" "}
-          <div className={styles.rectangleDiv4} />{" "}
-        </div>{" "} */}
         <div className={styles.groupDiv3}>
           {" "}
           <div className={styles.rectangleDiv5} />{" "}
@@ -178,31 +169,6 @@ const OfficerAnalysisWeb = () => {
         <div className={styles.officerAnalysisDiv1}>Officer Analysis</div>{" "}
       </div>{" "}
       <img className={styles.lineIcon1} alt="" src="../line-12.svg" />
-      {/* <form action="" onSubmit={handleSubmit} className={styles.grp2}>
-        <div>
-          <label htmlFor="name">Full Name</label>
-          <input
-            type="text"
-            className={styles.ip1}
-            onChange={(e) => setFname(e.target.value)}
-            name="name"
-            id="name"
-          />
-        </div>
-        <div>
-          <label htmlFor="ID">ID Number</label>
-          <input
-            type="number"
-            className={styles.ip1}
-            onChange={(e) => setID(e.target.value)}
-            name="ID"
-            id="ID"
-          />
-        </div>
-        <Button className={styles.groupButton} type="submit">
-          Get Analysis
-        </Button>
-      </form> */}
       <div
         style={{
           padding: "20px",
@@ -212,13 +178,6 @@ const OfficerAnalysisWeb = () => {
           marginLeft: 350,
         }}
       >
-        {/* <Paper
-          elevation={3}
-          style={{
-            padding: "30px",
-            marginBottom: "20px",
-          }}
-        > */}
         <form onSubmit={handleSubmit}>
           <Grid container spacing={3} alignItems="center" justify="center">
             <Grid item xs={12} style={{ textAlign: "center" }}>
@@ -245,7 +204,11 @@ const OfficerAnalysisWeb = () => {
                 onChange={(e) => setID(e.target.value)}
               />
             </Grid>
-            <Grid item xs={9.3} style={{ textAlign: "center", marginTop: "50px" }}>
+            <Grid
+              item
+              xs={9.3}
+              style={{ textAlign: "center", marginTop: "50px" }}
+            >
               <Button type="submit" variant="contained" color="primary">
                 Get Analysis
               </Button>

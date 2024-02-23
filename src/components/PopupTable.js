@@ -16,11 +16,11 @@ const PopupTable = ({ reports, onClose }) => {
                 <tr>
                   <th>Name</th>
                   <th>ID</th>
-                  <th>Mobile Number</th>
+                  {/* <th>Mobile Number</th> */}
                   <th>Patrolling Area</th>
                   <th>Points Covered</th>
-                  <th>Start Location</th>
-                  <th>End Location</th>
+                  {/* <th>Start Location</th>
+                  <th>End Location</th> */}
                   <th>FIR</th>
                 </tr>
               </thead>
@@ -29,11 +29,11 @@ const PopupTable = ({ reports, onClose }) => {
                   <tr key={index}>
                     <td>{report.name}</td>
                     <td>{report.ID}</td>
-                    <td>{report.mobileNumber}</td>
+                    {/* <td>{report.mobileNumber}</td> */}
                     <td>{report.patrollingarea}</td>
                     <td>{report.pointscovered}</td>
-                    <td>{report.startlocation}</td>
-                    <td>{report.endlocation}</td>
+                    {/* <td>{report.startlocation}</td>
+                    <td>{report.endlocation}</td> */}
                     <td>{report.fir}</td>
                   </tr>
                 ))}

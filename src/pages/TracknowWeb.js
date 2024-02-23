@@ -68,6 +68,7 @@ const GrievanceForm = () => {
     mobileNumber: "",
     patrollingarea: "",
     pointscovered: "",
+    firegistered: "",
     firDetails: [],
   });
   const [showPdf, setShowPdf] = useState(false);
@@ -401,6 +402,7 @@ const GrievanceForm = () => {
         mobileNumber: formData.mobileNumber,
         patrollingarea: formData.patrollingarea,
         pointscovered: formData.pointscovered,
+        firegistered: formData.firegistered,
       });
 
       console.log("Report added successfully");
@@ -680,8 +682,8 @@ const GrievanceForm = () => {
                     label="FIR Registered/एफआईआर दर्ज:"
                     variant="outlined"
                     fullWidth
-                    name="fir"
-                    value={formData.fir}
+                    name="firegistered"
+                    value={formData.firegistered}
                     onChange={handleInputChange}
                   />
                 </Grid>
