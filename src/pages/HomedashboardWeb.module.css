@@ -181,7 +181,7 @@
 }
 .emerCheckButton {
   position: absolute;
-  top: 333px;
+  top: 401px;
   left: 65px;
   color: white;
   cursor: pointer;
@@ -197,8 +197,8 @@
 .firAnalysisButton {
   position: absolute;
   color: white;
-  top: 296px;
-  left: 65px;
+  top: 333px;
+  left: 49px;
   cursor: pointer;
 }
 .icons8CheckpointGoalFlagFo {
@@ -211,7 +211,7 @@
 }
 .addProfileButton {
   position: absolute;
-  top: 401px;
+  top: 470px;
   left: 70px;
   color: white;
   cursor: pointer;

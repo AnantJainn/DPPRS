@@ -43,7 +43,6 @@ const HomedashboardWeb = () => {
 
   return (
     <div className={styles.homedashboardWebDiv}>
-      {/* <img className={styles.rectangleIcon} alt="" src="../rectangle-33.svg" /> */}
       <div className={styles.rectangleDiv} />
       <img
         className={styles.icons8Analytics301}
@@ -96,7 +95,7 @@ const HomedashboardWeb = () => {
       </Button>
       <Button
         className={styles.firAnalysisButton}
-        sx={{ width: 157 }}
+        sx={{ width: 167 }}
         variant="text"
         color="secondary"
         href="/firanalysis"

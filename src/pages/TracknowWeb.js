@@ -22,6 +22,9 @@ import { Button, Grid, TextField, MenuItem, Paper } from "@mui/material";
 const GrievanceForm = () => {
   const navigate = useNavigate();
   const storage = getStorage();
+  const onFIRAnalysis = useCallback(() => {
+    navigate("/firanalysis");
+  }, [navigate]);
   const onDashboardButtonClick = useCallback(() => {
     navigate("/homedashboardweb");
   }, [navigate]);
