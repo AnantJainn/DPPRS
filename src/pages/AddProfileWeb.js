@@ -44,6 +44,9 @@ const AddProfileWeb = () => {
     }
   };
   const navigate = useNavigate();
+  const onFIRAnalysis = useCallback(() => {
+    navigate("/firanalysis");
+  }, [navigate]);
 
   const onDashboardButtonClick = useCallback(() => {
     // Please sync "Home/dashboard-web" to the project
@@ -136,6 +139,16 @@ const AddProfileWeb = () => {
         Officer Analysis
       </Button>
       <Button
+        className={styles.firAnalysisButton}
+        sx={{ width: 167 }}
+        variant="text"
+        color="secondary"
+        href="/firanalysis"
+        onClick={onFIRAnalysis}
+      >
+        FIR Analysis
+      </Button>
+      <Button
         className={styles.emerCheckButton}
         sx={{ width: 129 }}
         variant="text"
@@ -148,13 +161,18 @@ const AddProfileWeb = () => {
       <img
         className={styles.icons8CheckpointGoalFlagFo}
         alt=""
-        src="../icons8checkpointgoalflagforprogressandopportunity24-1@2x.png"
+        src="../fir3.png"
       />
-      <div className={styles.addProfileDiv}>Add Profile</div>
+      <div className={styles.addProfileDiv}>Add Profile</div>{" "}
+      <img
+        className={styles.icons91CheckpointGoalFlagFo}
+        alt=""
+        src="../icons8profile32-1@2x.png"
+      />
       <img
         className={styles.icons8Profile321}
         alt=""
-        src="../icons8profile32-1@2x.png"
+        src="../icons8checkpointgoalflagforprogressandopportunity24-1@2x.png"
       />
 
       <img

@@ -29,6 +29,9 @@ const EmercheckWeb = () => {
   const onAddProfileButtonClick = useCallback(() => {
     navigate("/AddProfileWeb");
   }, [navigate]);
+  const onFIRAnalysis = useCallback(() => {
+    navigate("/firanalysis");
+  }, [navigate]);
 
   const onEmergencyAlertButtonClick = useCallback(() => {
     navigate("/AddProfileWeb");
@@ -188,9 +191,24 @@ const EmercheckWeb = () => {
       >
         Officer Analysis
       </Button>
-      <div className={styles.emerCheckDiv}>Emer-Check</div>
+      <Button
+        className={styles.firAnalysisButton}
+        sx={{ width: 167 }}
+        variant="text"
+        color="secondary"
+        href="/firanalysis"
+        onClick={onFIRAnalysis}
+      >
+        FIR Analysis
+      </Button>
       <img
         className={styles.icons8CheckpointGoalFlagFo}
+        alt=""
+        src="../fir3.png"
+      />
+      <div className={styles.emerCheckDiv}>Emer-Check</div>
+      <img
+        className={styles.icons81Dashboard481}
         alt=""
         src="../icons8checkpointgoalflagforprogressandopportunity24-1@2x.png"
       />

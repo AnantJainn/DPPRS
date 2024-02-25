@@ -29,6 +29,9 @@ const OfficerAnalysisWeb = () => {
   const onAddProfileButtonClick = useCallback(() => {
     navigate("/AddProfileWeb");
   }, [navigate]);
+  const onFIRAnalysis = useCallback(() => {
+    navigate("/firanalysis");
+  }, [navigate]);
 
   const fetchReports = async () => {
     const reportsCollection = collection(db, "Reports");
@@ -152,6 +155,21 @@ const OfficerAnalysisWeb = () => {
         src="../icons8dashboard48-1@2x.png"
       />{" "}
       <div className={styles.officerAnalysisDiv}>Officer Analysis</div>{" "}
+      <Button
+        className={styles.firAnalysisButton}
+        sx={{ width: 167 }}
+        variant="text"
+        color="secondary"
+        href="/firanalysis"
+        onClick={onFIRAnalysis}
+      >
+        FIR Analysis
+      </Button>
+      <img
+        className={styles.icons81Profile321}
+        alt=""
+        src="../fir3.png"
+      />
       <Button
         className={styles.emerCheckButton}
         sx={{ width: 129 }}

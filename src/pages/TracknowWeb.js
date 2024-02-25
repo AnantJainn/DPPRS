@@ -539,6 +539,21 @@ const GrievanceForm = () => {
         Officer Analysis
       </Button>
       <Button
+        className={styles.firAnalysisButton}
+        sx={{ width: 167 }}
+        variant="text"
+        color="secondary"
+        href="/firanalysis"
+        onClick={onFIRAnalysis}
+      >
+        FIR Analysis
+      </Button>
+      <img
+        className={styles.icons81Profile321}
+        alt=""
+        src="../fir3.png"
+      />
+      <Button
         className={styles.emerCheckButton}
         sx={{ width: 131 }}
         variant="text"

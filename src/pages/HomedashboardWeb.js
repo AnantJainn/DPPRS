@@ -103,6 +103,11 @@ const HomedashboardWeb = () => {
       >
         FIR Analysis
       </Button>
+      <img
+        className={styles.icons81Profile321}
+        alt=""
+        src="../fir3.png"
+      />
       <Button
         className={styles.emerCheckButton}
         sx={{ width: 127 }}

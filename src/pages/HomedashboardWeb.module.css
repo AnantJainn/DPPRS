@@ -203,7 +203,7 @@
 }
 .icons8CheckpointGoalFlagFo {
   position: absolute;
-  top: 342px;
+  top: 412px;
   left: 54px;
   width: 18px;
   height: 18px;
@@ -226,7 +226,15 @@
 
 .icons8Profile321 {
   position: absolute;
-  top: 410px;
+  top: 480px;
+  left: 54px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.icons81Profile321 {
+  position: absolute;
+  top: 340px;
   left: 54px;
   width: 18px;
   height: 18px;
