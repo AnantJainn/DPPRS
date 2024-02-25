@@ -548,12 +548,8 @@ const GrievanceForm = () => {
       >
         FIR Analysis
       </Button>
-      <img
-        className={styles.icons81Profile321}
-        alt=""
-        src="../fir3.png"
-      />
-      <Button
+      <img className={styles.icons81Profile321} alt="" src="../fir3.png" />
+      {/* <Button
         className={styles.emerCheckButton}
         sx={{ width: 131 }}
         variant="text"
@@ -567,7 +563,7 @@ const GrievanceForm = () => {
         className={styles.icons8CheckpointGoalFlagFo}
         alt=""
         src="../icons8checkpointgoalflagforprogressandopportunity24-1@2x.png"
-      />
+      /> */}
       <Button
         className={styles.addProfileButton}
         sx={{ width: 112 }}

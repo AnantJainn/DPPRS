@@ -189,7 +189,7 @@ const OfficerAnalysisWeb = () => {
         alt=""
         src="../icons8dashboard48-1@2x.png"
       />{" "}
-      <div className={styles.officerAnalysisDiv}>Officer Analysis</div>{" "}
+      <div className={styles.officerAnalysisDiv}>OFFICER ANALYSIS</div>{" "}
       <Button
         className={styles.firAnalysisButton}
         sx={{ width: 167 }}
@@ -201,7 +201,7 @@ const OfficerAnalysisWeb = () => {
         FIR Analysis
       </Button>
       <img className={styles.icons81Profile321} alt="" src="../fir3.png" />
-      <Button
+      {/* <Button
         className={styles.emerCheckButton}
         sx={{ width: 129 }}
         variant="text"
@@ -216,7 +216,7 @@ const OfficerAnalysisWeb = () => {
         className={styles.icons8CheckpointGoalFlagFo}
         alt=""
         src="../icons8checkpointgoalflagforprogressandopportunity24-1@2x.png"
-      />{" "}
+      />{" "} */}
       <Button
         className={styles.addProfileButton}
         sx={{ width: 112 }}

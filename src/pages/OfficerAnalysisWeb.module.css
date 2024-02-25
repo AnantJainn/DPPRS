@@ -178,8 +178,8 @@
 .officerAnalysisDiv {
   position: absolute;
   top: 265px;
-  left: 78px;
-  font-size: var(--font-size-base);
+  left: 69px;
+  font-size: 17px;
   display: inline-block;
   width: 157px;
   height: 27px;
@@ -201,14 +201,14 @@
 }
 .addProfileButton {
   position: absolute;
-  top: 470px;
+  top: 400px;
   left: 70px;
   color: white;
   cursor: pointer;
 }
 .icons8Profile321 {
   position: absolute;
-  top: 480px;
+  top: 400px;
   left: 54px;
   width: 18px;
   height: 18px;

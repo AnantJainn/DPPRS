@@ -58,7 +58,7 @@
 .polygonIcon,
 .polygonIcon2 {
   position: absolute;
-  top:3.89px;
+  top: 3.89px;
   left: 14.87px;
   width: 87.44px;
   height: 87.21px;
@@ -178,7 +178,7 @@
 }
 .icons91CheckpointGoalFlagFo {
   position: absolute;
-  top: 472px;
+  top: 402px;
   left: 54px;
   width: 18px;
   height: 18px;
@@ -187,14 +187,14 @@
 }
 .addProfileDiv {
   position: absolute;
-  top: 470px;
+  top: 400px;
   left: 83px;
   color: white;
   /* cursor: pointer; */
 }
 .icons8Profile321 {
   position: absolute;
-  top: 410px;
+  top: 400px;
   left: 54px;
   width: 18px;
   height: 18px;
@@ -555,30 +555,29 @@
   color: var(--color-white);
   font-family: var(--font-poppins);
 }
-.grp3{
+.grp3 {
   position: relative;
-  width : 355px;
+  width: 355px;
   height: 50%;
   margin-left: 420px;
   margin-top: 250px;
-  }
-  .ap{
-    font-size: 20px;
-    padding:0.4rem ;
-    width: 500px;
-    height: 50px;
-  }
-  
-  .groupButton3 {
-    position: relative;
-    background-color: #301565;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 25px;
-    margin-top: 70px;
-    right: 130px;
-    width: 230px;
-    height: 80px;
-  }
-    
+}
+.ap {
+  font-size: 20px;
+  padding: 0.4rem;
+  width: 500px;
+  height: 50px;
+}
+
+.groupButton3 {
+  position: relative;
+  background-color: #301565;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 25px;
+  margin-top: 70px;
+  right: 130px;
+  width: 230px;
+  height: 80px;
+}

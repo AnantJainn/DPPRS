@@ -54,7 +54,7 @@
   background-color: transparent;
   position: absolute;
   top: 140px;
-  left: 70px;
+  left: 77px;
   right: 26px;
   font-size: var(--font-size-base);
   font-family: var(--font-poppins);
@@ -211,7 +211,7 @@
 }
 .addProfileButton {
   position: absolute;
-  top: 470px;
+  top: 400px;
   left: 70px;
   color: white;
   cursor: pointer;
@@ -226,7 +226,7 @@
 
 .icons8Profile321 {
   position: absolute;
-  top: 480px;
+  top: 400px;
   left: 54px;
   width: 18px;
   height: 18px;

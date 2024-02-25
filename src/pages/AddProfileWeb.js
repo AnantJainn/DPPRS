@@ -148,7 +148,7 @@ const AddProfileWeb = () => {
       >
         FIR Analysis
       </Button>
-      <Button
+      {/* <Button
         className={styles.emerCheckButton}
         sx={{ width: 129 }}
         variant="text"
@@ -157,7 +157,7 @@ const AddProfileWeb = () => {
         onClick={onEmerCheckButtonClick}
       >
         Emer-Check
-      </Button>
+      </Button> */}
       <img
         className={styles.icons8CheckpointGoalFlagFo}
         alt=""
@@ -169,12 +169,11 @@ const AddProfileWeb = () => {
         alt=""
         src="../icons8profile32-1@2x.png"
       />
-      <img
+      {/* <img
         className={styles.icons8Profile321}
         alt=""
         src="../icons8checkpointgoalflagforprogressandopportunity24-1@2x.png"
-      />
-
+      /> */}
       <img
         className={styles.groupIcon1}
         alt=""

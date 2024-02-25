@@ -52,7 +52,7 @@ const HomedashboardWeb = () => {
       <div className={styles.rectangleDiv1} />
       <div className={styles.rectangleDiv2} />
       <div className={styles.rectangleDiv3} />
-      <button className={styles.dashboardButton}>Dashboard</button>
+      <button className={styles.dashboardButton}>DASHBOARD</button>
       <img
         className={styles.icons8DashboardLayout481}
         alt=""
@@ -104,7 +104,7 @@ const HomedashboardWeb = () => {
         FIR Analysis
       </Button>
       <img className={styles.icons81Profile321} alt="" src="../fir3.png" />
-      <Button
+      {/* <Button
         className={styles.emerCheckButton}
         sx={{ width: 127 }}
         variant="text"
@@ -118,7 +118,7 @@ const HomedashboardWeb = () => {
         className={styles.icons8CheckpointGoalFlagFo}
         alt=""
         src="../icons8checkpointgoalflagforprogressandopportunity24-1@2x.png"
-      />
+      /> */}
       <Button
         className={styles.addProfileButton}
         sx={{ width: 112 }}
