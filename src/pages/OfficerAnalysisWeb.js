@@ -1,18 +1,31 @@
 import React, { useCallback, useState, useEffect } from "react";
-import { Button, TextField, Grid, Paper, Typography } from "@mui/material";
+import {
+  Button,
+  TextField,
+  Grid,
+  Paper,
+  Typography,
+  MenuItem,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "./OfficerAnalysisWeb.module.css";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 import PopupTable from "../components/PopupTable";
 const OfficerAnalysisWeb = () => {
+  // const navigate = useNavigate();
+  // const [reports, setReports] = useState([]);
+  // const [filteredReports, setFilteredReports] = useState([]);
+  // const [name, setFname] = useState("");
+  // const [ID, setID] = useState("");
+  const [showPopup, setShowPopup] = useState(false); // State to manage popup visibility
+  const [firData, setFirData] = useState({});
   const navigate = useNavigate();
   const [reports, setReports] = useState([]);
   const [filteredReports, setFilteredReports] = useState([]);
-  const [name, setFname] = useState("");
+  const [name, setName] = useState("");
   const [ID, setID] = useState("");
-  const [showPopup, setShowPopup] = useState(false); // State to manage popup visibility
-  const [firData, setFirData] = useState({});
+  const [profileOptions, setProfileOptions] = useState([]);
   const onTrackNowButtonClick = useCallback(() => {
     navigate("/Report");
   }, [navigate]);
@@ -32,6 +45,15 @@ const OfficerAnalysisWeb = () => {
   const onFIRAnalysis = useCallback(() => {
     navigate("/firanalysis");
   }, [navigate]);
+  const fetchProfiles = async () => {
+    const querySnapshot = await getDocs(collection(db, "Profiles"));
+    const profiles = [];
+    querySnapshot.forEach((doc) => {
+      const profile = doc.data();
+      profiles.push(profile);
+    });
+    setProfileOptions(profiles);
+  };
 
   const fetchReports = async () => {
     const reportsCollection = collection(db, "Reports");
@@ -78,7 +100,7 @@ const OfficerAnalysisWeb = () => {
     e.preventDefault();
     if (name && ID) {
       const filtered = reports.filter(
-        (report) => report.name === name && report.ID === ID.trim() // Trim ID
+        (report) => report.name === name && report.ID === ID.trim()
       );
       setFilteredReports(filtered);
       setShowPopup(true);
@@ -93,8 +115,21 @@ const OfficerAnalysisWeb = () => {
   useEffect(() => {
     fetchReports();
     fetchFIRs();
+    fetchProfiles();
   }, []);
-
+  useEffect(() => {
+    const fetchReports = async () => {
+      const reportsCollection = collection(db, "Reports");
+      const snapshot = await getDocs(reportsCollection);
+      const reportData = snapshot.docs.map((doc) => ({
+        ID: doc.id,
+        ...doc.data(),
+      }));
+      setReports(reportData);
+      setFilteredReports(reportData);
+    };
+    fetchReports();
+  }, []);
   return (
     <div className={styles.officerAnalysisWebDiv}>
       <div className={styles.rectangleDiv} />
@@ -165,11 +200,7 @@ const OfficerAnalysisWeb = () => {
       >
         FIR Analysis
       </Button>
-      <img
-        className={styles.icons81Profile321}
-        alt=""
-        src="../fir3.png"
-      />
+      <img className={styles.icons81Profile321} alt="" src="../fir3.png" />
       <Button
         className={styles.emerCheckButton}
         sx={{ width: 129 }}
@@ -233,24 +264,38 @@ const OfficerAnalysisWeb = () => {
             </Grid>
             <Grid item xs={12} style={{ textAlign: "center" }}>
               <TextField
+                select
                 label="Full Name"
                 variant="outlined"
                 fullWidth
                 value={name}
-                onChange={(e) => setFname(e.target.value)}
-              />
+                onChange={(e) => setName(e.target.value)}
+              >
+                {profileOptions.map((profile, index) => (
+                  <MenuItem key={index} value={profile.name}>
+                    {profile.name}
+                  </MenuItem>
+                ))}
+              </TextField>
             </Grid>
             <Grid item xs={12} style={{ textAlign: "center" }}>
               <Typography variant="subtitle1">ID Number</Typography>
             </Grid>
             <Grid item xs={12} style={{ textAlign: "center" }}>
               <TextField
+                select
                 label="ID Number"
                 variant="outlined"
                 fullWidth
                 value={ID}
                 onChange={(e) => setID(e.target.value)}
-              />
+              >
+                {profileOptions.map((profile, index) => (
+                  <MenuItem key={index} value={profile.id}>
+                    {profile.id}
+                  </MenuItem>
+                ))}
+              </TextField>
             </Grid>
             <Grid
               item
