@@ -103,11 +103,7 @@ const HomedashboardWeb = () => {
       >
         FIR Analysis
       </Button>
-      <img
-        className={styles.icons81Profile321}
-        alt=""
-        src="../fir3.png"
-      />
+      <img className={styles.icons81Profile321} alt="" src="../fir3.png" />
       <Button
         className={styles.emerCheckButton}
         sx={{ width: 127 }}
@@ -154,12 +150,10 @@ const HomedashboardWeb = () => {
         src="../Delhi_Police_Logo.png"
       />
       <div className={styles.welcomeGarvDiv}>
-        Welcome to Delhi Police Patrolling Service,
+        Delhi Police Patrolling Dashboard
       </div>
       <div className={styles.ourMissionIsToAchieveAnE}>
-        Our mission is to achieve an environment of professionalism for the
-        police force. It will push the police personnel to be accountable which
-        will in turn increase their efficiency and decrease the crime rate.
+        List of all Officers are displayed below.
       </div>
       <OfficersTable />
     </div>
