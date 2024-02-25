@@ -1,0 +1,499 @@
+.rectangleDiv,
+.rectangleIcon {
+  position: absolute;
+  top: 198px;
+  left: 280px;
+  width: 1256px;
+  height: 785px;
+}
+.rectangleDiv {
+  top: 0;
+  left: -3px;
+  background-color: rgb(16, 16, 138);
+  width: 283px;
+  height: 982px;
+}
+.icons8Analytics301 {
+  position: absolute;
+  top: 269px;
+  left: 54px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.rectangleDiv1,
+.rectangleDiv2,
+.rectangleDiv3 {
+  position: absolute;
+  top: 816px;
+  left: 77.58px;
+  background-color: var(--color-beige-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 36px;
+  height: 207px;
+  transform: rotate(53.59deg);
+  transform-origin: 0 0;
+}
+.rectangleDiv2,
+.rectangleDiv3 {
+  top: 761px;
+  left: 88.17px;
+  background-color: var(--color-gold);
+  transform: rotate(53.4deg);
+}
+.rectangleDiv3 {
+  top: 713.98px;
+  left: 88.27px;
+  background-color: var(--color-yellow);
+  transform: rotate(53.5deg);
+}
+.dashboardButton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 140px;
+  left: 77px;
+  right: 26px;
+  font-size: var(--font-size-base);
+  font-family: var(--font-poppins);
+  color: var(--color-white);
+  text-align: right;
+  display: inline-block;
+  width: 119px;
+  height: 17px;
+}
+.logoutButton1 {
+  position: absolute;
+  top: 504px;
+  left: 65px;
+  color: white;
+  cursor: pointer;
+  max-width: 100%;
+}
+.icons9CheckpointGoalFlagFo {
+  position: absolute;
+  top: 511px;
+  left: 51px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.icons8DashboardLayout481 {
+  position: absolute;
+  top: 146px;
+  left: 54px;
+  width: 19.06px;
+  height: 18px;
+  object-fit: cover;
+}
+.polygonIcon,
+.polygonIcon2 {
+  position: absolute;
+  top: 3.89px;
+  left: 3.87px;
+  width: 87.44px;
+  height: 87.21px;
+}
+.polygonIcon2 {
+  top: 13.41px;
+  left: 12.03px;
+  width: 63.33px;
+  height: 62.02px;
+}
+.aANKHDiv,
+.polygonIcon3 {
+  position: absolute;
+  top: 6.17px;
+  left: 6.62px;
+  width: 75.48px;
+  height: 74.4px;
+}
+.aANKHDiv {
+  top: 40px;
+  left: 34px;
+  font-size: 7px;
+  font-weight: 900;
+  display: inline-block;
+  width: 27.7px;
+  height: 10.52px;
+}
+.ellipseIcon {
+  position: absolute;
+  top: 31.39px;
+  left: 47.46px;
+  width: 19.44px;
+  height: 24.23px;
+}
+.ellipseIcon1,
+.groupDiv {
+  position: absolute;
+  top: 32.48px;
+  left: 25.22px;
+  width: 19.52px;
+  height: 24.2px;
+}
+.groupDiv {
+  top: 30px;
+  left: 78px;
+  width: 87px;
+  height: 87px;
+  text-align: left;
+  font-size: var(--font-size-5xs);
+  font-family: var(--font-noto-sans-thai-ui);
+}
+.ellipseIcon2 {
+  position: absolute;
+  top: 87px;
+  left: 253px;
+  width: 53px;
+  height: 54px;
+}
+.ellipseIcon3,
+.groupIcon {
+  position: absolute;
+  top: 92.04px;
+  left: 258.04px;
+  width: 43.92px;
+  height: 43px;
+}
+.groupIcon {
+  top: 106px;
+  left: 274.94px;
+  width: 10.19px;
+  height: 16.66px;
+}
+.trackNowButton {
+  position: absolute;
+  top: 194px;
+  left: 55px;
+  color: white;
+  cursor: pointer;
+}
+.icons8Dashboard481 {
+  position: absolute;
+  top: 203px;
+  left: 54px;
+  width: 18px;
+  height: 16px;
+  object-fit: cover;
+}
+.emerCheckButton {
+  position: absolute;
+  top: 401px;
+  left: 65px;
+  color: white;
+  cursor: pointer;
+}
+
+.officerAnalysisButton {
+  position: absolute;
+  color: white;
+  top: 261px;
+  left: 65px;
+  cursor: pointer;
+}
+.firAnalysisButton {
+  position: absolute;
+  color: white;
+  top: 333px;
+  left: 49px;
+  cursor: pointer;
+}
+.icons8CheckpointGoalFlagFo {
+  position: absolute;
+  top: 412px;
+  left: 54px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.addProfileButton {
+  position: absolute;
+  top: 400px;
+  left: 70px;
+  color: white;
+  cursor: pointer;
+}
+.logoutButton {
+  position: absolute;
+  top: 454px;
+  left: 70px;
+  color: white;
+  cursor: pointer;
+}
+
+.icons8Profile321 {
+  position: absolute;
+  top: 400px;
+  left: 54px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.icons81Profile321 {
+  position: absolute;
+  top: 340px;
+  left: 54px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.groupIcon1 {
+  position: absolute;
+  height: 13.16%;
+  width: 6.61%;
+  top: 57.55%;
+  right: 89.63%;
+  bottom: 38.29%;
+  left: 2.5%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.ourMissionIsToAchieveAnE,
+.welcomeGarvDiv {
+  position: absolute;
+  left: 334px;
+  display: inline-block;
+}
+.welcomeGarvDiv {
+  top: 40px;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--color-indigo-100);
+  text-align: center;
+}
+.ourMissionIsToAchieveAnE {
+  top: 96px;
+  font-size: var(--font-size-base);
+  font-weight: 300;
+  color: var(--color-black);
+  text-align: left;
+  width: 1017px;
+  height: 60px;
+}
+.lineIcon,
+.rectangleDiv4 {
+  position: absolute;
+  top: 86.85px;
+  left: 102.5px;
+  width: 206.47px;
+  height: 2.17px;
+}
+.rectangleDiv4 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background: linear-gradient(180deg, #fff, #ededed);
+  backdrop-filter: blur(4px);
+  width: 410px;
+  height: 253px;
+}
+.groupDiv4,
+.rectangleDiv5,
+.trackNowDiv {
+  position: absolute;
+  width: 374.86px;
+  height: 222.55px;
+}
+.rectangleDiv5 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: rgb(16, 16, 138);
+}
+.groupDiv4,
+.trackNowDiv {
+  top: 15.23px;
+  left: 17.57px;
+}
+.trackNowDiv {
+  top: 28.11px;
+  left: 139.59px;
+  display: inline-block;
+  width: 132.82px;
+  height: 31.93px;
+}
+.groupDiv2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 410px;
+  height: 253px;
+}
+.allowYouToTrackAPolicePe {
+  position: absolute;
+  top: 89px;
+  left: 96px;
+  font-size: var(--font-size-sm);
+  text-align: center;
+  display: inline-block;
+  width: 220.26px;
+  height: 73.69px;
+}
+.groupIcon2 {
+  position: absolute;
+  top: 177.4px;
+  left: 186.44px;
+  width: 38.77px;
+  height: 37.66px;
+  cursor: pointer;
+}
+.lineIcon1 {
+  position: absolute;
+  top: 61.15px;
+  left: 146.84px;
+  width: 124.58px;
+  height: 1.16px;
+}
+.groupDiv1,
+.groupIcon3 {
+  position: absolute;
+  top: 187.53px;
+  left: 199.25px;
+  width: 12.26px;
+  height: 16.96px;
+}
+.groupDiv1 {
+  top: 241px;
+  left: 373px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 410px;
+  height: 253px;
+}
+.addProfileDiv {
+  position: absolute;
+  top: 28px;
+  left: 140px;
+  display: inline-block;
+  width: 136px;
+  height: 32px;
+}
+.addOrDelete {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.patrolling {
+  margin: 0;
+}
+.groupIcon4,
+.lineDiv {
+  position: absolute;
+  top: 177.4px;
+  left: 186.44px;
+  width: 38.77px;
+  height: 37.66px;
+}
+.groupIcon5,
+.lineDiv {
+  position: absolute;
+  top: 177.4px;
+  left: 186.44px;
+  width: 38.77px;
+  height: 37.66px;
+  margin-top: 12px;
+}
+.lineDiv {
+  top: 62.5px;
+  left: 139.5px;
+  border-top: 1px solid var(--color-white);
+  box-sizing: border-box;
+  width: 137px;
+  height: 1px;
+}
+.groupDiv5 {
+  position: absolute;
+  top: 596px;
+  left: 941px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 410px;
+  height: 253px;
+  cursor: pointer;
+}
+.emergencyCheckpointDiv,
+.immediatelySendsANotificati {
+  position: absolute;
+  top: 28px;
+  left: 60px;
+  display: inline-block;
+  width: 289px;
+  height: 32px;
+}
+.immediatelySendsANotificati {
+  top: 88px;
+  left: 58px;
+  font-size: var(--font-size-sm);
+  text-align: center;
+  width: 295px;
+  height: 99px;
+}
+.groupDiv9,
+.lineIcon4 {
+  position: absolute;
+  top: 66.69px;
+  left: 65.09px;
+  width: 283.91px;
+  height: 1.1px;
+}
+.groupDiv9 {
+  top: 592px;
+  left: 373px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 410px;
+  height: 253px;
+}
+.givesYouAReportOfTheAske,
+.officerAnalysisDiv {
+  position: absolute;
+  top: 23px;
+  left: 93px;
+  display: inline-block;
+  width: 223px;
+  height: 32px;
+}
+.givesYouAReportOfTheAske {
+  top: 89px;
+  left: 90px;
+  font-size: var(--font-size-sm);
+  text-align: center;
+  width: 230px;
+  height: 80px;
+}
+.lineDiv1 {
+  position: absolute;
+  top: 61.5px;
+  left: 126.5px;
+  border-top: 1px solid var(--color-white);
+  box-sizing: border-box;
+  width: 190px;
+  height: 1px;
+}
+.groupDiv13 {
+  position: absolute;
+  top: 241px;
+  left: 941px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 410px;
+  height: 253px;
+}
+.icons8Logout301 {
+  position: absolute;
+  top: 461px;
+  left: 54px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.homedashboardWebDiv {
+  position: relative;
+  background-color: var(--color-white);
+  width: 150%;
+  height: 982px;
+  overflow: hidden;
+  text-align: right;
+  font-size: var(--font-size-lg);
+  color: var(--color-white);
+  font-family: var(--font-poppins);
+}
