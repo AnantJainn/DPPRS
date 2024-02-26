@@ -24,6 +24,10 @@ const Intro = () => {
     navigate("/AddProfileWeb");
   }, [navigate]);
 
+  const onDashboardButtonClick = useCallback(() => {
+    // Please sync "Home/dashboard-web" to the project
+  }, []);
+
   const onLogoutButtonClick = useCallback(() => {
     // Please sync "Login-web" to the project
   }, []);
@@ -52,7 +56,16 @@ const Intro = () => {
       <div className={styles.rectangleDiv1} />
       <div className={styles.rectangleDiv2} />
       <div className={styles.rectangleDiv3} />
-      <button className={styles.dashboardButton}>DASHBOARD</button>
+      <Button
+        className={styles.dashboardButton}
+        sx={{ width: 119 }}
+        variant="text"
+        color="secondary"
+        href="/homedashboardweb"
+        onClick={onDashboardButtonClick}
+      >
+        Dashboard
+      </Button>
       <img
         className={styles.icons8DashboardLayout481}
         alt=""
@@ -149,22 +162,28 @@ const Intro = () => {
         alt=""
         src="../Delhi_Police_Logo.png"
       />
-      <div style={{ marginTop: "50px" }}>
+      <div>
+      <img
+        className={styles.groupIcon31}
+        alt=""
+        src="../Delhi_Police_Logo.png"
+      />
         <img
           src="../GGSIU_logo.png"
           alt="USAR Logo"
           style={{
-            maxWidth: "200px",
-            marginBottom: "20px",
-            marginRight: "1200px",
+            maxWidth: "150px",
+            // marginBottom: "20px",
+            marginRight: "800px",
+            marginTop: "27.4px",
           }}
         />
         <h1
           style={{
             fontSize: "36px",
-            marginBottom: "20px",
+            marginTop: "110px",
             color: "black",
-            marginRight: "800px",
+            marginRight: "850px",
           }}
         >
           Welcome to the Delhi Police Patrolling Dashboard
